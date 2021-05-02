@@ -10,7 +10,7 @@ import { Registration } from './registration';
 })
 export class RegistrationPageComponent implements OnInit {
   validator =false;
- 
+ validator2=true
 
   userModel = new Registration('','','','');
   constructor(private es:EnrollmentService) { }

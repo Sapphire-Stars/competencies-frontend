@@ -83,3 +83,7 @@
 .signup-form .fa-paper-plane {
     font-size: 18px;
 }
+.mystyle{
+    border: 1px red solid;
+    border-radius: 3px;
+}
