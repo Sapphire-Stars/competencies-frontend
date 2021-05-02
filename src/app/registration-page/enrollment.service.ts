@@ -36,4 +36,9 @@ export class EnrollmentService {
   // errorHandler(error:HttpErrorResponse){
   //   return throwError(error);
   // }
+
+
+  getToken(){ 
+    return localStorage.getItem('token');
+  }
 }
