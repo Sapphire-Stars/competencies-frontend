@@ -26,6 +26,7 @@ export class RegistrationPageComponent implements OnInit {
         .subscribe(
           data =>{
             this.validator=false;
+            window.alert("verification link has been sent to your mail, please verify")
             console.log('Success!',data)},
           error=>{
             this.validator=true;
