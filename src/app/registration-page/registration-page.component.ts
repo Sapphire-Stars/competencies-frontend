@@ -15,15 +15,27 @@ export class RegistrationPageComponent implements OnInit {
   userModel = new Registration('','','','');
   constructor(private es:EnrollmentService) { }
   onSubmit(){
-    this.es.enroll(this.userModel)
-    .subscribe(
-      data =>{
-        this.validator=false;
-        console.log('Success!',data)},
-      error=>{
-        this.validator=true;
-        console.log('Error!',error.error.error)}
-    );
+    this.es.checkUser(this.userModel).subscribe(data=>{
+      if(data.message!='email does not exist'){
+        this.validator=true
+        console.log(data.message)
+      }
+      else{
+        this.es.enroll(this.userModel)
+
+        .subscribe(
+          data =>{
+            this.validator=false;
+            console.log('Success!',data)},
+          error=>{
+            this.validator=true;
+            console.log(error)}
+        );
+
+      }
+    })
+
+   
   }
   
 

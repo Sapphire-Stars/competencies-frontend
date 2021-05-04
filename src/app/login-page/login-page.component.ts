@@ -25,15 +25,18 @@ export class LoginPageComponent implements OnInit {
     this.es.login(this.userModel).subscribe(
       data => {
         console.log(data)
+        // email exists and password verified
         if(data.message=='success'){
           console.log("ya success")
           this.validator=false
           this.validator2=false
         }
+        // email does not exists in database
         else if(data.message == 'email does not exist'){
           this.validator=false
           this.validator2=true
         }
+        // password entered is incorrect
         else{
           this.validator2=false
           this.validator=true
