@@ -5,9 +5,13 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import {  TokenInterceptorService} from './token-interceptor.service';
+
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+
 
 // import { RegistrationPageComponent } from './registration-page/registration-page.component';
 // import { LoginPageComponent } from './login-page/login-page.component';
@@ -28,7 +32,12 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  
+  providers: [{ 
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

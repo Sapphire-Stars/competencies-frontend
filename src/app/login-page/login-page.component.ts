@@ -19,7 +19,6 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     document.createElement
   }
-
   onSubmit(){
     console.log(this.userModel)
     this.es.login(this.userModel).subscribe(
@@ -30,6 +29,7 @@ export class LoginPageComponent implements OnInit {
           console.log("ya success")
           this.validator=false
           this.validator2=false
+             localStorage.setItem('token',data.token)
         }
         // email does not exists in database
         else if(data.message == 'email does not exist'){
