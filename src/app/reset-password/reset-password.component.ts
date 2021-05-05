@@ -23,7 +23,7 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   onSubmit(){
-   //this.router.navigate([`http://localhost:8900/api/reset-password`,this.userModel.password,this.email,this.token])
+   
    this.es.update(this.userModel,this.email,this.token).subscribe(data=>{
      console.log(data)
      

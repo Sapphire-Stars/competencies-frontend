@@ -31,7 +31,7 @@ export class EnrollmentService {
 
   enroll(user: Registration) {
     return this._http.post<any>(this._url,user);
-        // .pipe(catchError(this.errorHandler))
+        
   }
 
   login(user: Login){
@@ -41,9 +41,7 @@ export class EnrollmentService {
   checkUser(user: ForgotPassword){
     return this._http.post<any>(this._checkUser,user)
   }
-  // errorHandler(error:HttpErrorResponse){
-  //   return throwError(error);
-  // }
+  
 
 
   getToken(){ 
