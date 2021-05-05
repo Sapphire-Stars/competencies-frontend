@@ -12,6 +12,7 @@ import {  TokenInterceptorService} from './token-interceptor.service';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
+//import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
 
 // import { RegistrationPageComponent } from './registration-page/registration-page.component';
 // import { LoginPageComponent } from './login-page/login-page.component';
@@ -21,7 +22,9 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     AppComponent,
     routingComponents,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+   
+    
     // RegistrationPageComponent,
     // LoginPageComponent
   ],
@@ -30,7 +33,10 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
+
+    
   ],
   
   providers: [{ 
