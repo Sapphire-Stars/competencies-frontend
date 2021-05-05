@@ -1,4 +1,6 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { EnrollmentService } from '../registration-page/enrollment.service';
 import { ResetPassword } from './reset-password';
 
@@ -8,13 +10,24 @@ import { ResetPassword } from './reset-password';
   styleUrls: ['./reset-password.component.css']
 })
 export class ResetPasswordComponent implements OnInit {
+  email:any
+  token:any
 
-  constructor(private es:EnrollmentService) { }
+  constructor(private es:EnrollmentService,private route:ActivatedRoute,private router:Router) { }
   userModel = new ResetPassword('','')
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params:ParamMap)=>{
+      this.email=params.get('email')
+      this.token=params.get('token')
+    })
   }
 
   onSubmit(){
+   //this.router.navigate([`http://localhost:8900/api/reset-password`,this.userModel.password,this.email,this.token])
+   this.es.update(this.userModel,this.email,this.token).subscribe(data=>{
+     console.log(data)
+     
+   })
     console.log(this.userModel)
   }
 

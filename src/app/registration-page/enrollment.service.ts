@@ -13,6 +13,7 @@ import { HttpClient} from '@angular/common/http';
 import { Registration } from './registration';
 import { Login } from '../login-page/login'
 import { ForgotPassword } from '../forgot-password/forgot-password';
+import { ResetPassword } from '../reset-password/reset-password';
 // import { Registration } from './Registration';
 // import {catchError} from 'rxjs/operators';
 // import {throwError} from 'rxjs';
@@ -25,6 +26,7 @@ export class EnrollmentService {
   _url = 'http://localhost:8900/api/registrations';
   _loginUrl = 'http://localhost:8900/api/login';
   _checkUser = 'http://localhost:8900/api/check'
+ _updateUrl:any
   constructor(private _http: HttpClient) { }
 
   enroll(user: Registration) {
@@ -47,4 +49,13 @@ export class EnrollmentService {
   getToken(){ 
     return localStorage.getItem('token');
   }
+  update(user:ResetPassword,email:any,token:any){
+   this. _updateUrl=`http://localhost:8900/api/reset-password/${email}/${token}`
+   return this._http.post<any>(this._updateUrl,user)
+  }
+  getLink(user:ForgotPassword){
+    let url='http://localhost:8900/api/forget-password'
+    return this._http.post<any>(url,user)
+  }
 }
+

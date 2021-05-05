@@ -20,9 +20,13 @@ export class ForgotPasswordComponent implements OnInit {
     this.es.checkUser(this.userModel).subscribe(
       data => {
         console.log(data)
+    
         if(data.message=='valid user'){
           this.validator=false
-          this.router.navigate(['/resetPassword',data.email])
+          this.es.getLink(this.userModel).subscribe(data=>{
+            console.log(data)
+          })
+       
         }
         else{
          
