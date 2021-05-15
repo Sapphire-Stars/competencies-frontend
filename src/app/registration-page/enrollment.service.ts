@@ -14,6 +14,7 @@ import { Registration } from './registration';
 import { Login } from '../login-page/login'
 import { ForgotPassword } from '../forgot-password/forgot-password';
 import { ResetPassword } from '../reset-password/reset-password';
+import { Answer } from '../answer';
 // import { Registration } from './Registration';
 // import {catchError} from 'rxjs/operators';
 // import {throwError} from 'rxjs';
@@ -54,6 +55,11 @@ export class EnrollmentService {
   getLink(user:ForgotPassword){
     let url='http://localhost:8900/api/forget-password'
     return this._http.post<any>(url,user)
+  }
+
+  postAnswer(answer:Answer){
+    let url='http://localhost:8900/api/answer'
+    return this._http.post(url,answer)
   }
 }
 

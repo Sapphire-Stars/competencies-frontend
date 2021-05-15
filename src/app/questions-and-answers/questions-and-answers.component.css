@@ -1,0 +1,23 @@
+
+.question{
+    color: rgb(61, 14, 138);
+    margin:40px ;
+    padding-left: 100px;
+    margin-left:80px;
+    border: 1px rgb(80, 150, 255) solid;
+    border-radius: 4px;
+    background-color: rgb(157, 196, 219);
+}
+.answers{
+    margin-left: 120px;
+    margin-bottom: 10px;
+    border:1px rgb(80, 150, 255) solid;
+    margin-right: 120px;
+    border-radius: 4px;
+    background-color: rgb(235, 214, 207);
+    
+}
+label{
+    color:rgb(61, 14, 138);
+    font-size: 20px;
+}

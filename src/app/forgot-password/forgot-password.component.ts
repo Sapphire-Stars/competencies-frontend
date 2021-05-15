@@ -22,7 +22,10 @@ export class ForgotPasswordComponent implements OnInit {
         console.log(data)
         if(data.message=='valid user'){
           this.validator=false
-       
+          this.es.getLink(this.userModel).subscribe(data=>{
+            console.log(data)
+            window.alert("link to reset password has been sent to your mail!!")
+          })
         }
         else{
          

@@ -26,7 +26,12 @@ export class ResetPasswordComponent implements OnInit {
    
    this.es.update(this.userModel,this.email,this.token).subscribe(data=>{
      console.log(data)
-     
+     if(data.message=='password has been set'){
+       window.alert('Password has been updated')
+     }
+     else{
+       window.alert("Incorrect credentials")
+     }
    })
     console.log(this.userModel)
   }

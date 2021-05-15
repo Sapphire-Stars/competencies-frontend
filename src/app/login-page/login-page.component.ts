@@ -29,7 +29,8 @@ export class LoginPageComponent implements OnInit {
           console.log("ya success")
           this.validator=false
           this.validator2=false
-             localStorage.setItem('token',data.token)
+          localStorage.setItem('token',data.token)
+          window.alert("login successfull")
         }
         // email does not exists in database
         else if(data.message == 'email does not exist'){
