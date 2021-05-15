@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'register', pathMatch:'full'},
+  {path:'',redirectTo:'landingPage', pathMatch:'full'},
+  {path:'landingPage',component:LandingPageComponent},
   {path:'register',component:RegistrationPageComponent},
   {path:'login',component:LoginPageComponent},
   {path:'forgotPassword',component:ForgotPasswordComponent},

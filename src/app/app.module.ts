@@ -11,6 +11,7 @@ import {  TokenInterceptorService} from './token-interceptor.service';
 
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
 
@@ -23,6 +24,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     routingComponents,
     ForgotPasswordComponent,
     ResetPasswordComponent,
+    LandingPageComponent,
    
     
     // RegistrationPageComponent,
