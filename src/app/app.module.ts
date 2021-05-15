@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import {  TokenInterceptorService} from './token-interceptor.service';
@@ -36,7 +36,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     NgbModule,
     FormsModule,
     HttpClientModule,
-    
+    ReactiveFormsModule
 
     
   ],
