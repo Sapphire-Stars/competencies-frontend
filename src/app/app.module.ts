@@ -4,13 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import {  TokenInterceptorService} from './token-interceptor.service';
 
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { AskQuestionComponent } from './ask-question/ask-question.component';
 
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
 
@@ -23,6 +24,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     routingComponents,
     ForgotPasswordComponent,
     ResetPasswordComponent,
+    AskQuestionComponent,
+    
    
     
     // RegistrationPageComponent,
@@ -34,7 +37,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     NgbModule,
     FormsModule,
     HttpClientModule,
-    
+    ReactiveFormsModule
 
     
   ],

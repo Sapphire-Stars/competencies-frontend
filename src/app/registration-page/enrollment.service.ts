@@ -14,6 +14,8 @@ import { Registration } from './registration';
 import { Login } from '../login-page/login'
 import { ForgotPassword } from '../forgot-password/forgot-password';
 import { ResetPassword } from '../reset-password/reset-password';
+
+import { Question } from "../ask-question/askQuestion"
 // import { Registration } from './Registration';
 // import {catchError} from 'rxjs/operators';
 // import {throwError} from 'rxjs';
@@ -27,6 +29,7 @@ export class EnrollmentService {
   _loginUrl = 'http://localhost:8900/api/login';
   _checkUser = 'http://localhost:8900/api/check'
  _updateUrl:any
+ questionUrl="http://localhost:8900/api/question";
   constructor(private _http: HttpClient) { }
 
   enroll(user: Registration) {
@@ -57,5 +60,10 @@ export class EnrollmentService {
     let url='http://localhost:8900/api/forget-password'
     return this._http.post<any>(url,user)
   }
+
+  postQuestions(data:Question){ 
+    return this._http.post<any>(this.questionUrl,data);
+  }
+
 }
 
