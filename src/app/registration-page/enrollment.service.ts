@@ -14,7 +14,6 @@ import { Registration } from './registration';
 import { Login } from '../login-page/login'
 import { ForgotPassword } from '../forgot-password/forgot-password';
 import { ResetPassword } from '../reset-password/reset-password';
-
 import { Question } from "../ask-question/askQuestion"
 // import { Registration } from './Registration';
 // import {catchError} from 'rxjs/operators';
@@ -62,6 +61,9 @@ export class EnrollmentService {
   }
 
   postQuestions(data:Question){ 
+    //get email from local storage
+  let userEmail =localStorage.getItem('email')
+   data.email=userEmail;
     return this._http.post<any>(this.questionUrl,data);
   }
 
