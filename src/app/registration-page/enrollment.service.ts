@@ -54,6 +54,9 @@ export class EnrollmentService {
     return this._http.post(url,answer)
   }
   postQuestions(data:Question){ 
+    //get email from local storage
+  let userEmail =localStorage.getItem('email')
+   data.email=userEmail;
     return this._http.post<any>(this.questionUrl,data);
   }
   getQuestions(){

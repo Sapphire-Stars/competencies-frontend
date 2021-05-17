@@ -13,6 +13,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { QuestionsAndAnswersComponent } from './questions-and-answers/questions-and-answers.component';
 import { AskQuestionComponent } from './ask-question/ask-question.component';
+import { EnrollmentService } from './registration-page/enrollment.service';
+import { AuthGuard } from './auth.guard';
 
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
 
@@ -48,7 +50,7 @@ import { AskQuestionComponent } from './ask-question/ask-question.component';
     provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptorService,
     multi:true
-  }],
+  },EnrollmentService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,13 +13,23 @@ export class AskQuestionComponent implements OnInit {
   ngOnInit(): void {
   }
 questionObj:any= new FormGroup({ 
-  questionTitle:new FormControl(''),
-  questionBody:new FormControl(''),
  
+  questionTitle:new FormControl('',Validators.required),
+  questionBody:new FormControl('',Validators.required),
+ // questionTag:new FormControl('')
  questionTag:new FormArray([
    
  ])
 })
+get questionTitle(){
+return this.questionObj.get('questionTitle')
+}
+get questionBody(){
+  return this.questionObj.get('questionBody') 
+}
+get questionTag(){
+  return this.questionObj.get('questionTag')
+}
 
 addTags(){
   this.questionObj.get('questionTag').push(new FormControl(null,Validators.required))
