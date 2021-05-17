@@ -13,6 +13,7 @@ export class AskQuestionComponent implements OnInit {
   ngOnInit(): void {
   }
 questionObj:any= new FormGroup({ 
+ 
   questionTitle:new FormControl('',Validators.required),
   questionBody:new FormControl('',Validators.required),
  // questionTag:new FormControl('')

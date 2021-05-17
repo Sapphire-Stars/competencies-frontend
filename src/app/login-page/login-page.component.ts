@@ -3,7 +3,7 @@ import { $ } from 'protractor';
 import { EnrollmentService } from '../registration-page/enrollment.service';
 import { Login } from './login';
 import { Router} from "@angular/router";
-import jwt_decode from "jwt-decode";
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -30,13 +30,16 @@ export class LoginPageComponent implements OnInit {
           console.log("ya success")
           this.validator=false
           this.validator2=false
+          localStorage.setItem('token',data.token)
+          localStorage.setItem('email',this.userModel.email)
+          window.alert("login successfull")
              localStorage.setItem('token',data.token)
              
              //getting  token and decoding it and storing into local storage
-             var token=data.token
-           let decodedHeader:any= jwt_decode(token)
-            console.log(decodedHeader)
-            localStorage.setItem('email',decodedHeader.user.email)
+          //    var token=data.token
+          //  let decodedHeader:any= jwt_decode(token)
+          //   console.log(decodedHeader)
+          //   localStorage.setItem('email',decodedHeader.user.email)
              //navigate after logged in
            //this.route.navigate(['/askQuestion'])
         }
