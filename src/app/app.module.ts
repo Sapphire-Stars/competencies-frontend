@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
@@ -18,6 +18,9 @@ import { QuestionsAndAnswersComponent } from './questions-and-answers/questions-
 import { AskQuestionComponent } from './ask-question/ask-question.component';
 import { EnrollmentService } from './registration-page/enrollment.service';
 import { AuthGuard } from './auth.guard';
+import {HomePageComponent} from './home-page/home-page.component'
+import {NgxPaginationModule} from 'ngx-pagination'
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
@@ -32,9 +35,13 @@ import { AuthGuard } from './auth.guard';
     ForgotPasswordComponent,
     ResetPasswordComponent,
 
-    UserProfileComponent
+    UserProfileComponent,
     QuestionsAndAnswersComponent,
     AskQuestionComponent,
+    HomePageComponent,
+    LandingPageComponent
+    
+   
     
    
     
@@ -48,7 +55,8 @@ import { AuthGuard } from './auth.guard';
     NgbModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
 
     
   ],
