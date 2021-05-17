@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AskQuestionComponent } from './ask-question/ask-question.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { HomePageComponent } from './home-page/home-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'login',component:LoginPageComponent},
   {path:'forgotPassword',component:ForgotPasswordComponent},
   {path:'resetPassword/:email/:token',component:ResetPasswordComponent},
-  {path:'askQuestion',component:AskQuestionComponent}
+  {path:'ask-question',component:AskQuestionComponent},
+  {path:'home-page',component:HomePageComponent}
 ];
 
 @NgModule({

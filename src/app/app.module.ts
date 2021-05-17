@@ -12,6 +12,11 @@ import {  TokenInterceptorService} from './token-interceptor.service';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AskQuestionComponent } from './ask-question/ask-question.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import {NgxPaginationModule} from 'ngx-pagination'
+
+
 
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
 
@@ -25,6 +30,11 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     LandingPageComponent,
+    AskQuestionComponent,
+    HomePageComponent
+    
+   
+    
    
     
     // RegistrationPageComponent,
@@ -36,7 +46,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     NgbModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
 
     
   ],

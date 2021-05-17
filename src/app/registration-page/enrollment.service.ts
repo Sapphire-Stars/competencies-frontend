@@ -64,6 +64,9 @@ export class EnrollmentService {
   postQuestions(data:Question){ 
     return this._http.post<any>(this.questionUrl,data);
   }
+  getQuestions(){
+    return this._http.get("http://localhost:8900/api/question")
+  }
 
 }
 

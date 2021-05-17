@@ -1,0 +1,33 @@
+.box2{
+    background: lightgreen;
+    width: 100%;
+    height: auto;
+    border-radius: .5rem;
+    margin-right: 2rem;
+    padding-right: 2rem;
+
+}
+.card{
+    border:none
+}
+#my-button{
+    margin-top: -5rem;
+    margin-right: 1%;
+
+}
+#my-button-1{
+    height:25px;
+
+}
+.next{
+    margin-left: 70%;
+}
+.gradient{
+    height: 200%;
+    background-color: red; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, lightgreen , yellow);
+    padding-bottom: 30%;
+}
+#my-button-3{
+    margin-left: 1680%;
+}

@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <img src="https://p.kindpng.com/picc/s/19-195403_stack-overflow-logo-hd-png-download.png" width="100" height="50" alt="">
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ml-auto">
+         
+          <button id="my-button-3" class="btn btn-primary pull-right" routerLink="/user-profile" routerLinkActive=true >Profile</button>
+       
+          
+        </div>
+    </div>
+</nav>
+
+</div>
+<div class="gradient">
+  <div class="container">
+    <button id="my-button-5" class="btn btn-primary pull-right " routerLink="/login" routerLinkActive=true >Signout</button>
+    <h1 style="margin-left: 0rem mr-8">Top Questions</h1>
+    <button id="my-button-5" class="btn btn-primary pull-right" routerLink="/ask-question" routerLinkActive=true >Ask Question</button>
+     
+    <br /><br />
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <div (click)="onClick()" *ngFor="let i of data.questionObj  | paginate: { id: 'listing_pagination',
+            itemsPerPage: 5,
+            currentPage: page,
+            totalItems: totalRec }">
+              <div class="box2">
+                <p>Title:{{ i.questionTitle }}</p>
+                <div>
+                 <small> Tags:<button id="my-button-1" class="btn btn-primary btn-sm  btn-outline-success">{{ i.tags }}</button></small>
+                </div>
+                
+                <br />
+              </div>
+              <br />
+            </div>
+
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="next">
+		<pagination-controls  id="listing_pagination" maxSize:any="5" directionLinks:any="true" (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>
+
