@@ -1,9 +1,12 @@
-
+.mycontainer{
+   
+    background:linear-gradient(to left,#808080,#3fada8);
+}
 .question{
     color: rgb(61, 14, 138);
-    margin:40px ;
+   
     padding-left: 100px;
-    margin-left:80px;
+    margin: 40px 80px;
     border: 1px rgb(80, 150, 255) solid;
     border-radius: 4px;
     background-color: rgb(157, 196, 219);
@@ -21,3 +24,5 @@ label{
     color:rgb(61, 14, 138);
     font-size: 20px;
 }
+
+

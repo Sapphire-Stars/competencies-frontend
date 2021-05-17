@@ -30,6 +30,7 @@ export class LoginPageComponent implements OnInit {
           this.validator=false
           this.validator2=false
           localStorage.setItem('token',data.token)
+          localStorage.setItem('email',this.userModel.email)
           window.alert("login successfull")
         }
         // email does not exists in database

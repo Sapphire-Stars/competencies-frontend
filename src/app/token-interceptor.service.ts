@@ -1,6 +1,6 @@
 import { Injectable,Injector } from '@angular/core';
-import {HttpInterceptor  } from "@angular/common/http";
-import { EnrollmentService } from "../app/registration-page/enrollment.service";
+import {HttpHandler, HttpInterceptor, HttpRequest  } from "@angular/common/http";
+import { EnrollmentService } from "./registration-page/enrollment.service";
 @Injectable({
   providedIn: 'root'
 })
@@ -17,5 +17,19 @@ export class TokenInterceptorService implements HttpInterceptor{
       }
     })
     return next.handle(tokenizedReq)
+  
+  
+  // intercept(req:HttpRequest<any>,next:HttpHandler) { 
+  
+  //   let tokenizedReq=req.clone( { 
+  //     headers: req.headers.append('Authorization','token')
+  //     //{ 
+        
+  //    // Authorization: `Bearer xx.yy.zz`
+  //     //}
+  //   })
+  //   return next.handle(tokenizedReq)
+  // }
   }
+
 }

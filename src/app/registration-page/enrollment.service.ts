@@ -1,12 +1,3 @@
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class EnrollmentService {
-
-//   constructor() { }
-// }
 
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
@@ -15,9 +6,8 @@ import { Login } from '../login-page/login'
 import { ForgotPassword } from '../forgot-password/forgot-password';
 import { ResetPassword } from '../reset-password/reset-password';
 import { Answer } from '../answer';
-// import { Registration } from './Registration';
-// import {catchError} from 'rxjs/operators';
-// import {throwError} from 'rxjs';
+
+import { Question } from "../ask-question/askQuestion"
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +18,7 @@ export class EnrollmentService {
   _loginUrl = 'http://localhost:8900/api/login';
   _checkUser = 'http://localhost:8900/api/check'
  _updateUrl:any
+ questionUrl="http://localhost:8900/api/questions";
   constructor(private _http: HttpClient) { }
 
   enroll(user: Registration) {
@@ -42,8 +33,6 @@ export class EnrollmentService {
   checkUser(user: ForgotPassword){
     return this._http.post<any>(this._checkUser,user)
   }
-  
-
 
   getToken(){ 
     return localStorage.getItem('token');
@@ -57,9 +46,22 @@ export class EnrollmentService {
     return this._http.post<any>(url,user)
   }
 
-  postAnswer(answer:Answer){
-    let url='http://localhost:8900/api/answer'
+  postAnswer(question:any,answer:Answer){
+    console.log(question)
+    console.log(answer)
+    answer.author=localStorage.getItem('email')
+    let url=`http://localhost:8900/api/answer/${question}`
     return this._http.post(url,answer)
   }
+  postQuestions(data:Question){ 
+    return this._http.post<any>(this.questionUrl,data);
+  }
+  getQuestions(){
+    return this._http.get(this.questionUrl)
+  }
+  getQuetionDetails(question:any){
+    return this._http.get(`${this.questionUrl}/${question}`)
+  }
+
 }
 
