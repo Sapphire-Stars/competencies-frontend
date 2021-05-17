@@ -12,7 +12,9 @@ import { ResetPassword } from './reset-password';
 export class ResetPasswordComponent implements OnInit {
   email:any
   token:any
+
   confirmPassword:any
+
 
   constructor(private es:EnrollmentService,private route:ActivatedRoute,private router:Router) { }
   userModel = new ResetPassword('','')

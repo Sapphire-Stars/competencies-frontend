@@ -46,6 +46,11 @@ export class EnrollmentService {
     return this._http.post<any>(url,user)
   }
 
+  getProfile(){
+    return this._http.get<any>(this._url)
+  }
+
+
   postAnswer(question:any,answer:Answer){
     console.log(question)
     console.log(answer)
@@ -65,6 +70,7 @@ export class EnrollmentService {
   getQuetionDetails(question:any){
     return this._http.get(`${this.questionUrl}/${question}`)
   }
+
 
 }
 
