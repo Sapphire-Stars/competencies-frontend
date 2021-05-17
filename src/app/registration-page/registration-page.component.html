@@ -1,6 +1,6 @@
 
-<div class="body-main">
-    <div class="signup-form">
+<div class="body-main row">
+    <div class="signup-form col-md-10 col-12">
         <form class="borer border-shadow" #userForm="ngForm" (ngSubmit)="onSubmit()">
             <h2>Sign Up</h2>
             <p>Please fill in this form to create an account!</p>
@@ -22,7 +22,7 @@
             <div class="form-group">
                 <div class="input-group" [class.mystyle]="validator || email.invalid && email.touched">
                     <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <input type="email" class="form-control" name="email" placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"   #email="ngModel" [(ngModel)]="userModel.email">
+                    <input type="email" class="form-control" name="email" placeholder="Email Address" required pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"   #email="ngModel" [(ngModel)]="userModel.email">
                 </div>
                 <div *ngIf="email.errors && (email.invalid && email.touched)">
                     <small class="text-danger" *ngIf="email.errors.required">Email is a required field!</small>

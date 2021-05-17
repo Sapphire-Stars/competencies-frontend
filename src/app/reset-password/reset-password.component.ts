@@ -12,6 +12,10 @@ import { ResetPassword } from './reset-password';
 export class ResetPasswordComponent implements OnInit {
   email:any
   token:any
+
+  confirmPassword:any
+
+
   constructor(private es:EnrollmentService,private route:ActivatedRoute,private router:Router) { }
   userModel = new ResetPassword('','')
   ngOnInit(): void {
@@ -22,10 +26,15 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   onSubmit(){
-   //this.router.navigate([`http://localhost:8900/api/reset-password`,this.userModel.password,this.email,this.token])
+   
    this.es.update(this.userModel,this.email,this.token).subscribe(data=>{
      console.log(data)
-     
+     if(data.message=='password has been set'){
+       window.alert('Password has been updated')
+     }
+     else{
+       window.alert("Incorrect credentials")
+     }
    })
     console.log(this.userModel)
   }
