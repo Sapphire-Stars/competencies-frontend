@@ -21,13 +21,18 @@ export class HomePageComponent implements OnInit {
     this.es.getQuestions().subscribe(data=>{
       console.log(data)
       this.data=data
-      this.totalRec = this.data.questionObj.length;
+      this.totalRec = this.data.length;
      
     })
 
   }
-  onClick(){
-    this.route.navigate(['./landingPage'])
+  onClick(value:any){
+    this.route.navigate(['./questions',value])
+  }
+  signOut(){
+    localStorage.removeItem('token')
+    localStorage.removeItem('email')
+    this.route.navigate(['/login'])
   }
 
 }

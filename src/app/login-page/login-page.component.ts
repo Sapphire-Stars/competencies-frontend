@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { $ } from 'protractor';
 import { EnrollmentService } from '../registration-page/enrollment.service';
 import { Login } from './login';
-<<<<<<< HEAD
-import {Router} from '@angular/router'
-=======
 import { Router} from "@angular/router";
->>>>>>> 30764a3c0247f1e77c08a0dcd09dfd32adb61b0f
 
 @Component({
   selector: 'app-login-page',
@@ -16,19 +12,12 @@ import { Router} from "@angular/router";
 export class LoginPageComponent implements OnInit {
   userModel = new Login('', '');
 
-<<<<<<< HEAD
-  constructor(private es: EnrollmentService,private route:Router) {}
-
-  public validator = false;
-  public validator2 = false;
-=======
-  userModel=new Login('','');
+  //userModel=new Login('','');
   
   constructor(private es:EnrollmentService,private route:Router) { }
   
   public validator=false;
   public validator2 = false
->>>>>>> 30764a3c0247f1e77c08a0dcd09dfd32adb61b0f
   ngOnInit(): void {
     document.createElement;
   }
@@ -44,6 +33,7 @@ export class LoginPageComponent implements OnInit {
           this.validator2=false
           localStorage.setItem('token',data.token)
           localStorage.setItem('email',this.userModel.email)
+          this.route.navigate(['/home-page'])
           window.alert("login successfull")
              localStorage.setItem('token',data.token)
              

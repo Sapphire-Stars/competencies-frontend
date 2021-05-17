@@ -15,14 +15,14 @@ const routes: Routes = [
   {path:'',redirectTo:'landingPage', pathMatch:'full'},
   {path:'landingPage',component:LandingPageComponent},
   {path:'register',component:RegistrationPageComponent},
-  {path:'questions/:question',component:QuestionsAndAnswersComponent},
+  {path:'questions/:question',component:QuestionsAndAnswersComponent,canActivate:[AuthGuard]},
   {path:'login',component:LoginPageComponent},
   {path:'forgotPassword',component:ForgotPasswordComponent},
   {path:'resetPassword/:email/:token',component:ResetPasswordComponent},
  
-  {path:'home-page',component:HomePageComponent},
+  {path:'home-page',component:HomePageComponent,canActivate:[AuthGuard]},
  
-  {path:'user-profile',component:UserProfileComponent},
+  {path:'user-profile',component:UserProfileComponent,canActivate:[AuthGuard]},
 
   {path:'askQuestion',component:AskQuestionComponent,canActivate:[AuthGuard]}
 

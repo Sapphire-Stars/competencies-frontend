@@ -18,9 +18,10 @@
 </div>
 <div class="gradient">
   <div class="container">
-    <button id="my-button-5" class="btn btn-primary pull-right " routerLink="/login" routerLinkActive=true >Signout</button>
+    <!-- <button id="my-button-5" class="btn btn-primary pull-right " routerLink="/login" routerLinkActive=true >Signout</button> -->
+    <button id="my-button-5" class="btn btn-primary pull-right " (click)="signOut()" routerLinkActive=true >Signout</button>
     <h1 style="margin-left: 0rem mr-8">Top Questions</h1>
-    <button id="my-button-5" class="btn btn-primary pull-right" routerLink="/ask-question" routerLinkActive=true >Ask Question</button>
+    <button id="my-button-5" class="btn btn-primary pull-right" routerLink="/askQuestion" routerLinkActive=true >Ask Question</button>
      
     <br /><br />
 
@@ -28,7 +29,7 @@
       <div class="col-sm-12">
         <div class="card">
           <div class="card-body">
-            <div (click)="onClick()" *ngFor="let i of data.questionObj  | paginate: { id: 'listing_pagination',
+            <div (click)="onClick(i.questionTitle)" *ngFor="let i of data  | paginate: { id: 'listing_pagination',
             itemsPerPage: 5,
             currentPage: page,
             totalItems: totalRec }">

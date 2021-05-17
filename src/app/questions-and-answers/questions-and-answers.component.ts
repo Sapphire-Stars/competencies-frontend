@@ -21,7 +21,9 @@ export class QuestionsAndAnswersComponent implements OnInit {
   answerModel = new Answer();
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap)=>{
+
       this.question= params.get('question');
+      console.log(this.question)
     })
     this.service.getQuetionDetails(this.question).subscribe(
       data=>{

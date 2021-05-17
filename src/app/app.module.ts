@@ -20,6 +20,7 @@ import { EnrollmentService } from './registration-page/enrollment.service';
 import { AuthGuard } from './auth.guard';
 import {HomePageComponent} from './home-page/home-page.component'
 import {NgxPaginationModule} from 'ngx-pagination'
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
@@ -37,7 +38,8 @@ import {NgxPaginationModule} from 'ngx-pagination'
     UserProfileComponent,
     QuestionsAndAnswersComponent,
     AskQuestionComponent,
-    HomePageComponent
+    HomePageComponent,
+    LandingPageComponent
     
    
     
