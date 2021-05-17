@@ -57,5 +57,8 @@ export class EnrollmentService {
     let url='http://localhost:8900/api/forget-password'
     return this._http.post<any>(url,user)
   }
+  getProfile(){
+    return this._http.get<any>(this._url)
+  }
 }
 

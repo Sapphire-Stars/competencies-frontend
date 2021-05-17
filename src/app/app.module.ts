@@ -11,6 +11,7 @@ import {  TokenInterceptorService} from './token-interceptor.service';
 
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 // import { RegistrationPageComponent } from './registration-page/registration-page.component';
@@ -21,7 +22,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     AppComponent,
     routingComponents,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    UserProfileComponent
     // RegistrationPageComponent,
     // LoginPageComponent
   ],
