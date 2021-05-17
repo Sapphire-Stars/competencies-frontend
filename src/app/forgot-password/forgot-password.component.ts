@@ -20,15 +20,13 @@ export class ForgotPasswordComponent implements OnInit {
     this.es.checkUser(this.userModel).subscribe(
       data => {
         console.log(data)
-    
         if(data.message=='valid user'){
           this.validator=false
            window.alert("Link to reset password has been sent to your email")
           this.es.getLink(this.userModel).subscribe(data=>{
             console.log(data)
-         
+            window.alert("link to reset password has been sent to your mail!!")
           })
-       
         }
         else{
          

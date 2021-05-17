@@ -1,12 +1,3 @@
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class EnrollmentService {
-
-//   constructor() { }
-// }
 
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
@@ -14,11 +5,9 @@ import { Registration } from './registration';
 import { Login } from '../login-page/login'
 import { ForgotPassword } from '../forgot-password/forgot-password';
 import { ResetPassword } from '../reset-password/reset-password';
+import { Answer } from '../answer';
 
 import { Question } from "../ask-question/askQuestion"
-// import { Registration } from './Registration';
-// import {catchError} from 'rxjs/operators';
-// import {throwError} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -29,12 +18,12 @@ export class EnrollmentService {
   _loginUrl = 'http://localhost:8900/api/login';
   _checkUser = 'http://localhost:8900/api/check'
  _updateUrl:any
- questionUrl="http://localhost:8900/api/question";
+ questionUrl="http://localhost:8900/api/questions";
   constructor(private _http: HttpClient) { }
 
   enroll(user: Registration) {
     return this._http.post<any>(this._url,user);
-        // .pipe(catchError(this.errorHandler))
+        
   }
 
   login(user: Login){
@@ -44,10 +33,6 @@ export class EnrollmentService {
   checkUser(user: ForgotPassword){
     return this._http.post<any>(this._checkUser,user)
   }
-  // errorHandler(error:HttpErrorResponse){
-  //   return throwError(error);
-  // }
-
 
   getToken(){ 
     return localStorage.getItem('token');
@@ -61,12 +46,31 @@ export class EnrollmentService {
     return this._http.post<any>(url,user)
   }
 
+  getProfile(){
+    return this._http.get<any>(this._url)
+  }
+
+
+  postAnswer(question:any,answer:Answer){
+    console.log(question)
+    console.log(answer)
+    answer.author=localStorage.getItem('email')
+    let url=`http://localhost:8900/api/answer/${question}`
+    return this._http.post(url,answer)
+  }
   postQuestions(data:Question){ 
+    //get email from local storage
+  let userEmail =localStorage.getItem('email')
+   data.email=userEmail;
     return this._http.post<any>(this.questionUrl,data);
   }
   getQuestions(){
-    return this._http.get("http://localhost:8900/api/question")
+    return this._http.get(this.questionUrl)
   }
+  getQuetionDetails(question:any){
+    return this._http.get(`${this.questionUrl}/${question}`)
+  }
+
 
 }
 

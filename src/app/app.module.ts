@@ -11,11 +11,15 @@ import {  TokenInterceptorService} from './token-interceptor.service';
 
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { AskQuestionComponent } from './ask-question/ask-question.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import {NgxPaginationModule} from 'ngx-pagination'
 
+import { UserProfileComponent } from './user-profile/user-profile.component';
+
+import { QuestionsAndAnswersComponent } from './questions-and-answers/questions-and-answers.component';
+import { AskQuestionComponent } from './ask-question/ask-question.component';
+import { EnrollmentService } from './registration-page/enrollment.service';
+import { AuthGuard } from './auth.guard';
+import {HomePageComponent} from './home-page/home-page.component'
+import {NgxPaginationModule} from 'ngx-pagination'
 
 
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
@@ -29,7 +33,9 @@ import {NgxPaginationModule} from 'ngx-pagination'
     routingComponents,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    LandingPageComponent,
+
+    UserProfileComponent,
+    QuestionsAndAnswersComponent,
     AskQuestionComponent,
     HomePageComponent
     
@@ -37,6 +43,7 @@ import {NgxPaginationModule} from 'ngx-pagination'
     
    
     
+
     // RegistrationPageComponent,
     // LoginPageComponent
   ],
@@ -56,7 +63,7 @@ import {NgxPaginationModule} from 'ngx-pagination'
     provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptorService,
     multi:true
-  }],
+  },EnrollmentService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

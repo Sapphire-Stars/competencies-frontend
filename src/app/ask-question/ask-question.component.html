@@ -5,20 +5,22 @@
             <div class="form-group">
                 <label>Title</label>
                 <input type="text" class="form-control" placeholder="give title for question" formControlName="questionTitle"required>
+                <span class="error" *ngIf="questionTitle.hasError('required')&& questionTitle.touched">question title is required</span>
             </div>
             <div class="form-group">
                 <label>Body</label><br>
-                <textarea cols="70" rows="15" class="form-control" name="questionBody"formControlName="questionBody" required ></textarea>
+                <textarea cols="80" rows="15" class="form-control" name="questionBody"formControlName="questionBody" required ></textarea>
+                <span class="error" *ngIf="questionBody.hasError('required')&& questionBody.touched">question body is required</span>
             </div>
-            <div class="form-group" formArrayName="questionTag">
+            <div class="form-group" formArrayName="questionTag" required>
                 <label>Tag</label>
                 <ng-container *ngFor="let tag of questionObj.get('questionTag').controls;index as i">
-                    <input type="text" class="form-control" placeholder="specify tag" autocomplete="off" formControlName="{{i}}" required>
-                
+                    <input style="margin-top: 10px;"type="text" class="form-control" placeholder="specify tag" autocomplete="off" formControlName="{{i}}" required>
+                <span class="error" *ngIf="questionTag.hasError('required')&& questionTag.touched">question tag is required</span>
                 </ng-container>
-                <button class="btn-btn-primary btn-sm" (click)="addTags()" type="button"> add tags</button>
-            </div>
-            <button class="btn btn-success" type="submit">Submit question</button>
+                <button class="btn btn-secondary btn-lg" style="margin-top: 8px;color: white;"(click)="addTags()" type="button"> add tags</button>
+               </div>
+            <button class="btn btn-primary btn-lg" type="submit" [disabled]="!questionObj.valid"style="font-size: 20px;padding: 7px;">Submit question</button>
         </form>
     </div>
 </div>
