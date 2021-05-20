@@ -3,6 +3,8 @@ export class Question{
         public questionTitle:string,
         public questionBody:string,
         public questionTag:string[],
-        public email:any
+        public email:any,
+        public views:number
+        
     ){}
 }

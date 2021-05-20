@@ -9,6 +9,7 @@ import { Answer } from '../answer';
 
 import { Question } from "../ask-question/askQuestion"
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -70,6 +71,14 @@ export class EnrollmentService {
   getQuetionDetails(question:any){
     return this._http.get(`${this.questionUrl}/${question}`)
   }
+  getQuestionViews(question:any){
+    let myUrl=`http://localhost:8900/api/views`
+    return this._http.patch<any>(myUrl,question)
+  }
+
+  
+
+  
 
 
 }
