@@ -21,6 +21,7 @@ import { AuthGuard } from './auth.guard';
 import {HomePageComponent} from './home-page/home-page.component'
 import {NgxPaginationModule} from 'ngx-pagination'
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
@@ -39,7 +40,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     QuestionsAndAnswersComponent,
     AskQuestionComponent,
     HomePageComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    UpdateProfileComponent
     
    
     
