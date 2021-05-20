@@ -27,6 +27,7 @@ export class HomePageComponent implements OnInit {
 
   }
   onClick(value:any){
+    
     this.route.navigate(['./questions',value])
   }
   signOut(){
@@ -34,5 +35,6 @@ export class HomePageComponent implements OnInit {
     localStorage.removeItem('email')
     this.route.navigate(['/login'])
   }
+ 
 
 }
