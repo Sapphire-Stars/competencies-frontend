@@ -27,8 +27,8 @@
                 </div>
                 <div *ngIf="password.errors && (password.invalid && password.touched)">
                     <div class="text-danger" *ngIf="password.errors.required">Password is required</div>
-                    <div class="text-danger" *ngIf="password.errors.minlength">Password must be at least 8 characters
-                    </div>
+                    <!-- <div class="text-danger" *ngIf="password.errors.minlength">Password must be at least 8 characters
+                    </div> -->
                 </div>
             </div>
 
