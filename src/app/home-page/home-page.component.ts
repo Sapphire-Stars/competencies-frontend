@@ -28,11 +28,15 @@ export class HomePageComponent implements OnInit {
 
   }
   onClick(value:any){
+
     let obj={question:value}
     this.es.getQuestionViews(obj).subscribe(data=>{
       console.log(data)
       this.data=data
     })
+
+    
+
     this.route.navigate(['./questions',value])
   }
   signOut(){
@@ -40,5 +44,6 @@ export class HomePageComponent implements OnInit {
     localStorage.removeItem('email')
     this.route.navigate(['/login'])
   }
+ 
 
 }

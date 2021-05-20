@@ -19,7 +19,7 @@
 <div class="gradient">
   <div class="container">
     <!-- <button id="my-button-5" class="btn btn-primary pull-right " routerLink="/login" routerLinkActive=true >Signout</button> -->
-    <button id="my-button-5" class="btn btn-primary pull-right " (click)="signOut()" routerLinkActive=true >Signout</button>
+    <button id="my-button-5" class="btn btn-primary pull-right mt-2 " (click)="signOut()" routerLinkActive=true >Signout</button>
     <h1 style="margin-left: 0rem mr-8">Top Questions</h1>
     <button id="my-button-5" class="btn btn-primary pull-right" routerLink="/askQuestion" routerLinkActive=true >Ask Question</button>
      
@@ -34,13 +34,17 @@
             currentPage: page,
             totalItems: totalRec }">
               <div class="box2">
+
                 <small>Views:</small><br>
                 <span>{{i.views}}</span>
                 
                 <p>Title:{{ i.questionTitle }}</p>
               
+
+                <p class="pl-3 pt-3">Title:{{ i.questionTitle }}</p>
+
                 <div>
-                 <small> Tags:<button id="my-button-1" class="btn btn-primary btn-sm  btn-outline-success">{{ i.tags }}</button></small>
+                 <small class="pl-3 pt-3"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn btn-primary btn-sm  btn-outline-success ml-1">{{ tag }}</button></span></small>
                 </div>
                 
                 <br />

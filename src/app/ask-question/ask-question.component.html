@@ -9,7 +9,7 @@
             </div>
             <div class="form-group">
                 <label>Body</label><br>
-                <textarea cols="80" rows="15" class="form-control" name="questionBody"formControlName="questionBody" required ></textarea>
+                <textarea cols="80" rows="20" class="form-control" name="questionBody"formControlName="questionBody" required ></textarea>
                 <span class="error" *ngIf="questionBody.hasError('required')&& questionBody.touched">question body is required</span>
             </div>
             <div class="form-group" formArrayName="questionTag" required>
