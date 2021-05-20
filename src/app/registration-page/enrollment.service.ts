@@ -11,6 +11,7 @@ import { Question } from "../ask-question/askQuestion"
 import { Active } from '../user-profile/active';
 import { updateUser } from '../update-profile/update-profile';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -83,6 +84,14 @@ export class EnrollmentService {
   getQuetionDetails(question:any){
     return this._http.get(`${this.questionUrl}/${question}`)
   }
+  getQuestionViews(question:any){
+    let myUrl=`http://localhost:8900/api/views`
+    return this._http.patch<any>(myUrl,question)
+  }
+
+  
+
+  
 
   getProfileDetails(user:Active){
     let userEmail =localStorage.getItem('email')
