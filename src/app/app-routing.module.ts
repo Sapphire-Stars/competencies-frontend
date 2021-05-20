@@ -9,6 +9,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { QuestionsAndAnswersComponent } from './questions-and-answers/questions-and-answers.component';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
  
   {path:'user-profile',component:UserProfileComponent,canActivate:[AuthGuard]},
 
-  {path:'askQuestion',component:AskQuestionComponent,canActivate:[AuthGuard]}
+  {path:'askQuestion',component:AskQuestionComponent,canActivate:[AuthGuard]},
+  {path:'update-profile',component:UpdateProfileComponent}
 
 ];
 
