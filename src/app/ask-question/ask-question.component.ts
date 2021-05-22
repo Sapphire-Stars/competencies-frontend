@@ -35,6 +35,7 @@ addTags(){
   this.questionObj.get('questionTag').push(new FormControl(null,Validators.required))
 }
 onSubmit(){ 
+  window.alert("Your question is submited")
   console.log(this.questionObj.value);
   this.questionservice.postQuestions(this.questionObj.value).subscribe(result=>{ 
     console.log(result)
