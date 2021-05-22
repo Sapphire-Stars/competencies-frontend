@@ -73,7 +73,7 @@ export class EnrollmentService {
     //get email from local storage
    let userEmail =localStorage.getItem('email')
 
-  let userEmail =localStorage.getItem('email')
+
 
    data.email=userEmail;
     return this._http.post<any>(this.questionUrl,data);
