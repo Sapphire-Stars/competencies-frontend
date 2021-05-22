@@ -21,6 +21,9 @@ import { AuthGuard } from './auth.guard';
 import {HomePageComponent} from './home-page/home-page.component'
 import {NgxPaginationModule} from 'ngx-pagination'
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+
+
 
 
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
@@ -40,14 +43,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AskQuestionComponent,
     HomePageComponent,
     LandingPageComponent
-    
-   
-    
-   
-    
-
-    // RegistrationPageComponent,
-    // LoginPageComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -56,7 +52,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AngularEditorModule
 
     
   ],

@@ -1,4 +1,4 @@
 export class Answer {
-    answer:any;
+    answer='';
     author:any
 }

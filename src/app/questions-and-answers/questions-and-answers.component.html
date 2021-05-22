@@ -80,7 +80,7 @@
     
     <form #answer="ngForm" (ngSubmit)="onSubmit()">
         <label class="pl-5">Your Answer</label>
-        <div class="form-group col-11 ml-2">
+        <!-- <div class="form-group col-11 ml-2">
 
             <textarea  rows="10" col="80" class="form-control border-primary" placeholder="Type your answer here.."
                 #answer="ngModel" [class.is_invalid]="answer.invalid && answer.touched" name="answer"
@@ -88,10 +88,15 @@
 
             </textarea>
 
-        </div>
-        <div class="post pb-3">
-            <button class="btn btn-primary submit">POST YOUR ANSWER</button>
-            <button class="btn btn-primary submit" routerLink="../../home-page">GO TO QUESTIONS</button>
-        </div>
+        </div>-->
+        
+            <angular-editor [placeholder]="'Enter text here...'"name="htmlContent" [(ngModel)]="answerModel.answer"></angular-editor>
+            <div class="post pb-3">
+                <button class="btn btn-primary submit">POST YOUR ANSWER</button>
+            </div> 
+            
     </form>
+
+
+    
 </div>
