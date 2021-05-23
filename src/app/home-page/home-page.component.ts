@@ -44,6 +44,11 @@ export class HomePageComponent implements OnInit {
     localStorage.removeItem('email')
     this.route.navigate(['/login'])
   }
- 
+  searchQuestionsByTags(tag:any){
+    this.es.questionByTags(tag).subscribe(data=>{
+      console.log(data)
+      this.data=data
+    })
+  }
 
 }
