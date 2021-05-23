@@ -6,7 +6,7 @@ import { Login } from '../login-page/login'
 import { ForgotPassword } from '../forgot-password/forgot-password';
 import { ResetPassword } from '../reset-password/reset-password';
 import { Answer } from '../answer';
-
+import { UserProfile } from "../user-profile/userProfile";
 import { Question } from "../ask-question/askQuestion"
 
 @Injectable({
@@ -18,7 +18,8 @@ export class EnrollmentService {
   _loginUrl = 'http://localhost:8900/api/login';
   _checkUser = 'http://localhost:8900/api/check'
  _updateUrl:any
- questionUrl="http://localhost:8900/api/questions";
+ questionUrl="http://localhost:8900/api/question";
+ profileUrl="http://localhost:8900/api/single";
   constructor(private _http: HttpClient) { }
 
   enroll(user: Registration) {
@@ -71,6 +72,9 @@ export class EnrollmentService {
     return this._http.get(`${this.questionUrl}/${question}`)
   }
 
+    postProfileData(data:UserProfile){
+      return this._http.post<any>(this.profileUrl,data)
+    }
 
 }
 

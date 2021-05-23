@@ -1,7 +1,14 @@
-<div class="container">
+<!--<div class="container">
     <h1>hello</h1>
   <div *ngFor="let i of data">
     {{i.firstname}}
   </div>
-  
+
+</div>-->
+<form  action="/single" method="post" [formGroup]="profileObj"enctype="multipart/form-data" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+  <label class="control-label">Select File</label>
+  <input name="profile" id="input-1" type="file" class="form-control" formControlName="profilePicture">
 </div>
+<button type="submit">submit</button>
+</form>

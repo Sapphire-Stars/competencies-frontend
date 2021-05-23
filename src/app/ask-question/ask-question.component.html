@@ -1,27 +1,83 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-        <form [formGroup]="questionObj" method="post"(ngSubmit)="onSubmit()">
+        <form [formGroup]="questionObj" method="post"(ngSubmit)="onSubmit()" class="formClass">
+            
+        <h1 style="text-align: center;font-family: 'Merienda', cursive;">Ask Question Form</h1><hr>
             <div class="form-group">
                 <label>Title</label>
                 <input type="text" class="form-control" placeholder="give title for question" formControlName="questionTitle"required>
-                <span class="error" *ngIf="questionTitle.hasError('required')&& questionTitle.touched">question title is required</span>
+               <span class="error" *ngIf="questionTitle.hasError('required')&& questionTitle.touched">question title is required</span>
             </div>
             <div class="form-group">
                 <label>Body</label><br>
-                <textarea cols="80" rows="15" class="form-control" name="questionBody"formControlName="questionBody" required ></textarea>
-                <span class="error" *ngIf="questionBody.hasError('required')&& questionBody.touched">question body is required</span>
-            </div>
-            <div class="form-group" formArrayName="questionTag" required>
+                <angular-editor formControlName="questionBody" [config]="editorConfig" class="editor"></angular-editor>
+          <!--      <textarea cols="80" rows="15" class="form-control" name="questionBody"formControlName="questionBody" required ></textarea>
+            -->    <span class="error" *ngIf="questionBody.hasError('required')&& questionBody.touched">question body is required</span>
+            
+        </div>
+            <!--<div class="form-group" formArrayName="questionTag" required>
                 <label>Tag</label>
                 <ng-container *ngFor="let tag of questionObj.get('questionTag').controls;index as i">
                     <input style="margin-top: 10px;"type="text" class="form-control" placeholder="specify tag" autocomplete="off" formControlName="{{i}}" required>
                 <span class="error" *ngIf="questionTag.hasError('required')&& questionTag.touched">question tag is required</span>
                 </ng-container>
-                <button class="btn btn-secondary btn-lg" style="margin-top: 8px;color: white;"(click)="addTags()" type="button"> add tags</button>
+                <button class="btn btn-secondary btn-lg" style="margin-top: 8px;color: white; padding: 12px 16px;
+                font-size: 23px;
+                font-weight: 300;
+                margin-left:10px;
+               
+font-family: 'Merienda', cursive;"(click)="addTags()" type="button"> add tags</button>
+               </div>-->
+               <div class="form-group">
+                   <label>Tags</label>
+                <mat-form-field class="example-chip-list">
+                    <mat-label>add Tags</mat-label>
+                    <mat-chip-list #chipList aria-label="select tag">
+                      <mat-chip
+                        *ngFor="let tag of questionTagArray"
+                        [selectable]="selectable"
+                        [removable]="removable"
+                        (removed)="remove(tag)">
+                        {{tag.name}}
+                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                      </mat-chip>
+                      <input
+                        placeholder="New tag..."
+                        #tagInput
+                        formControlName="questionTag"
+                        [matChipInputFor]="chipList"
+                        [matAutocomplete]="auto"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        (matChipInputTokenEnd)="add($event)" >
+                        
+                    </mat-chip-list>
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                          {{option}}
+                        </mat-option>
+                      </mat-autocomplete>
+                  </mat-form-field>
+                 
                </div>
-            <button class="btn btn-primary btn-lg" type="submit" [disabled]="!questionObj.valid"style="font-size: 20px;padding: 7px;">Submit question</button>
+            <button class="btn btn-primary btn-lg" type="submit" [disabled]="!questionObj.valid" id="btn">Submit question</button>
         </form>
     </div>
+
+ <!-- <div class="col-lg-4">
+    <div class="card text-white bg-secondary  mb-3" style="max-width: 25rem; max-height: 20rem;">
+        <div class="card-header">Ask Doubts</div>
+        <div class="card-body">
+          <h5 class="card-title">Summarize The Problem</h5>
+          <p class="card-text">
+            Include details about your goal
+
+            Describe expected and actual results
+            
+            Include any error messages
+          </p>
+        </div>
+      </div>
+  </div>-->
 </div>
 </div>
