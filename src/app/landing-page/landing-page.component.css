@@ -1,0 +1,10 @@
+.carousel-inner {
+    height: 600px;
+  }
+  
+  .carousel-item{
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-height: 300px;
+  }
