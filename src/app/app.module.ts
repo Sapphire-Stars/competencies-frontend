@@ -21,6 +21,7 @@ import { AuthGuard } from './auth.guard';
 import {HomePageComponent} from './home-page/home-page.component'
 import {NgxPaginationModule} from 'ngx-pagination'
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import {  NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
@@ -50,7 +51,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     QuestionsAndAnswersComponent,
     AskQuestionComponent,
     HomePageComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    UpdateProfileComponent
     
    
     

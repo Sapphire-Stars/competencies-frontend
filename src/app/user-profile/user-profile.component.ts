@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { EnrollmentService } from '../registration-page/enrollment.service';
+import { Active } from './active';
 
 @Component({
   selector: 'app-user-profile',
@@ -9,21 +10,32 @@ import { EnrollmentService } from '../registration-page/enrollment.service';
 })
 export class UserProfileComponent implements OnInit {
   data:any;
+  question:any;
+  totalRec:any;
+  page:number=1;
+  activeModel=new Active('','','','')
   constructor(private es:EnrollmentService) { }
 
   ngOnInit(): void {
-    this.es.getProfile().subscribe(data=>{
-      console.log(data)
-      this.data=data
+    // this.es.getProfile().subscribe(data=>{
+    //   console.log(data)
+    //   this.data=data
+    // })
+    this.es.getProfileDetails(this.activeModel).subscribe(data=>{
+      console.log(data);
+      this.data = data
     })
+    this.es.getUserQuestion().subscribe(question=>{
+      console.log(question)
+      this.question= question
+      this.totalRec = this.data.length;
+    })
+    
   }
   profileObj:any=new FormGroup({
     profilePicture:new FormControl('')
   })
-onSubmit(){
-  console.log(this.profileObj.value)
-  this.es.postProfileData(this.profileObj.value).subscribe(result=>{
-    console.log(result)
-  })
-}
+
+  
+
 }

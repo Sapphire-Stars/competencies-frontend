@@ -7,6 +7,7 @@ import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/a
 import {MatChipInputEvent} from '@angular/material/chips';
   import {Observable} from 'rxjs';
   import {map, startWith} from 'rxjs/operators';
+  import { Router } from "@angular/router";
 export interface Tags {
   name: string;
 }
@@ -28,7 +29,7 @@ export class AskQuestionComponent implements OnInit {
 questionTagArray:Tags[]=[];
   filteredOptions!: Observable<string[]>;
   //tags: string[] = ['nodejs'];
-  allTags: string[] = ['Angular', 'react', 'expressjs', 'javascript', 'html','css','bootstrap','restApi','mongodb'];
+  allTags: any[] = ['Angular', 'react', 'expressjs', 'javascript', 'html','css','bootstrap','restApi','mongodb'];
 
   
   @ViewChild('tagInput')
@@ -46,7 +47,7 @@ questionTagArray:Tags[]=[];
  //])
 //})
   constructor(private questionservice:EnrollmentService,
-    private fb: FormBuilder) { 
+    private fb: FormBuilder,private router:Router) { 
     
     // this.filteredOptions = this.questionTagArray.valueChanges.pipe(
     //   startWith(null),
@@ -68,7 +69,7 @@ questionTagArray:Tags[]=[];
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.allTags.filter(option => option.toLowerCase().includes(filterValue));
+    return this.allTags.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
  
 get questionTitle(){
@@ -114,6 +115,7 @@ editorConfig: AngularEditorConfig = {
       name: 'titleText',
       class: 'titleText',
       tag: 'h1',
+
     },
   ],
   uploadUrl: 'v1/image',
@@ -159,11 +161,11 @@ remove(tags: Tags): void {
     this.questionTagArray.splice(index, 1);
   }
 }
-//
+
 // selected(event: MatAutocompleteSelectedEvent): void {
-//   this.questionTag.push(event.option.viewValue);
-//   this.fruitInput.nativeElement.value = '';
-//   this.questionTag.setValue(null);
+//   this.questionTagArray.push(event.option.viewValue);
+//   this.tagInput.nativeElement.value = '';
+//   this.questionObj.get('questionTag').setValue(null);
 // }
 
 // private _filter(value: string): string[] {
@@ -176,9 +178,11 @@ remove(tags: Tags): void {
 
 
 onSubmit(){ 
+  window.alert("Your question is submited")
   console.log(this.questionObj.value);
   this.questionservice.postQuestions(this.questionObj.value).subscribe(result=>{ 
     console.log(result)
   })
+  this.router.navigate(['/home-page'])
 }
 }
