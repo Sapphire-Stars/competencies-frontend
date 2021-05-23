@@ -119,6 +119,10 @@ export class QuestionsAndAnswersComponent implements OnInit {
       })
     
   }
+
+  myStyle = {
+    height: '300px'
+  }
  responseForAnswer:any;
   onSubmit() {
     console.log(this.answerModel)
@@ -139,11 +143,11 @@ export class QuestionsAndAnswersComponent implements OnInit {
 
 editorConfig: AngularEditorConfig = {
     editable: true,
-      spellcheck: true,
-      height: 'auto',
+      spellcheck: false,
+      height: '300px',
       minHeight: '0',
       maxHeight: 'auto',
-      width: 'auto',
+      width: '1100px',
       minWidth: '0',
       translate: 'yes',
       enableToolbar: true,
@@ -178,9 +182,10 @@ editorConfig: AngularEditorConfig = {
     sanitize: true,
     toolbarPosition: 'top',
     toolbarHiddenButtons: [
-      ['bold', 'italic'],
-      ['fontSize']
+      [ 'italic'],
+      
     ]
+    
 };
 
 }

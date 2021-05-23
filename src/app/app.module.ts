@@ -21,13 +21,10 @@ import { AuthGuard } from './auth.guard';
 import {HomePageComponent} from './home-page/home-page.component'
 import {NgxPaginationModule} from 'ngx-pagination'
 import { LandingPageComponent } from './landing-page/landing-page.component';
-<<<<<<< HEAD
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
 
-=======
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
->>>>>>> 640fbd3b64eeb22772bf2fd5a88cc4ae2372b2a3
 
 
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
@@ -46,21 +43,8 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     QuestionsAndAnswersComponent,
     AskQuestionComponent,
     HomePageComponent,
-<<<<<<< HEAD
-    LandingPageComponent
-  
-=======
     LandingPageComponent,
     UpdateProfileComponent
-    
-   
-    
-   
-    
-
-    // RegistrationPageComponent,
-    // LoginPageComponent
->>>>>>> 640fbd3b64eeb22772bf2fd5a88cc4ae2372b2a3
   ],
   imports: [
     BrowserModule,

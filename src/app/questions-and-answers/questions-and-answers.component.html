@@ -60,7 +60,7 @@
         </div>
 
         <div class="col-sm-7">
-            <div class="mt-3 mb-3">{{answer.answer}}</div>
+            <div class="mt-3 mb-3" [innerHtml]="answer.answer"></div>
         </div>
 
         <div class="author col-sm-3 ">
@@ -89,8 +89,14 @@
             </textarea>
 
         </div>-->
+
+            <div class="editor">
+
+                <angular-editor [placeholder]="'Enter text here...'" [config]="editorConfig" name="htmlContent" clas="editor" [(ngModel)]="answerModel.answer"></angular-editor>
+
+            </div>
         
-            <angular-editor [placeholder]="'Enter text here...'"name="htmlContent" [(ngModel)]="answerModel.answer"></angular-editor>
+           
             <div class="post pb-3">
                 <button class="btn btn-primary submit">POST YOUR ANSWER</button>
             </div> 

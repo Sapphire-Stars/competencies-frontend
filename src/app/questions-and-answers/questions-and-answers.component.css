@@ -1,4 +1,4 @@
-.container-fluid{
+/* .container-fluid{
     display: grid;
     justify-content: center;
     flex-direction: column;
@@ -74,3 +74,14 @@ label{
 .askbutton{
     margin-left: 74px;
 }
+
+.editor{
+  margin-left: 27px;
+ 
+}
+
+.editor .angular-editor-button[title="Subscript"],
+.editor .angular-editor-button[title="Superscript"],
+.editor .angular-editor-button[title="Text Color"] {
+   background-color: darkblue;
+} */
