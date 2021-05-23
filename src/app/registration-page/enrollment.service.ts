@@ -73,7 +73,7 @@ export class EnrollmentService {
     //get email from local storage
    let userEmail =localStorage.getItem('email')
 
-  let userEmail =localStorage.getItem('email')
+
 
    data.email=userEmail;
     return this._http.post<any>(this.questionUrl,data);
@@ -114,6 +114,10 @@ export class EnrollmentService {
 
   voteAnswer(questionAnswerObj:any){
     return this._http.put(`${this.answerUrl}`,questionAnswerObj)
+  }
+  questionByTags(value:any){
+    return this._http.get(`http://localhost:8900/api/questionByTagName/${value}`)
+
   }
 
 
