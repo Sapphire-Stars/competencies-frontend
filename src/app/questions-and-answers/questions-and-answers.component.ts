@@ -147,7 +147,7 @@ editorConfig: AngularEditorConfig = {
       height: '300px',
       minHeight: '0',
       maxHeight: 'auto',
-      width: '1100px',
+      width: '1050px',
       minWidth: '0',
       translate: 'yes',
       enableToolbar: true,

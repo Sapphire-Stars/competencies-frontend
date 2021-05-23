@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { EnrollmentService } from '../registration-page/enrollment.service';
 import { Active } from './active';
 
@@ -31,6 +32,13 @@ export class UserProfileComponent implements OnInit {
     })
     
   }
-  
-
+  profileObj:any=new FormGroup({
+    profilePicture:new FormControl('')
+  })
+onSubmit(){
+  console.log(this.profileObj.value)
+  this.es.postProfileData(this.profileObj.value).subscribe(result=>{
+    console.log(result)
+  })
+}
 }

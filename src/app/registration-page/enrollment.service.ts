@@ -6,7 +6,7 @@ import { Login } from '../login-page/login'
 import { ForgotPassword } from '../forgot-password/forgot-password';
 import { ResetPassword } from '../reset-password/reset-password';
 import { Answer } from '../answer';
-
+import { UserProfile } from "../user-profile/userProfile";
 import { Question } from "../ask-question/askQuestion"
 import { Active } from '../user-profile/active';
 import { updateUser } from '../update-profile/update-profile';
@@ -31,6 +31,8 @@ export class EnrollmentService {
 
  answerUrl="http://localhost:8900/api/answer";
 
+ 
+ profileUrl="http://localhost:8900/api/single";
   constructor(private _http: HttpClient) { }
 
   enroll(user: Registration) {
@@ -116,6 +118,9 @@ export class EnrollmentService {
     return this._http.put(`${this.answerUrl}`,questionAnswerObj)
   }
 
+    postProfileData(data:UserProfile){
+      return this._http.post<any>(this.profileUrl,data)
+    }
 
 }
 

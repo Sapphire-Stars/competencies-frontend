@@ -27,6 +27,17 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
+import {  NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
+import { MatChipsModule } from "@angular/material/chips";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatIconModule } from "@angular/material/icon";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import {  MatIconModule} from '@angular/material/icon';
+//import {  MatInputModule } from "@angular/material/input";
+//import {  MatAutocompleteModule } from "@angular/material/autocomplete";
+//import {  MatChipsModule  } from "@angular/material/chips";
+//import {  MatFormFieldModule } from "@angular/material/form-field";
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
 
 // import { RegistrationPageComponent } from './registration-page/registration-page.component';
@@ -54,8 +65,13 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     HttpClientModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    AngularEditorModule
-
+    AngularEditorModule,
+    MatChipsModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatIconModule,
+    BrowserAnimationsModule ,
+    NgMultiSelectDropDownModule.forRoot()
     
   ],
   
