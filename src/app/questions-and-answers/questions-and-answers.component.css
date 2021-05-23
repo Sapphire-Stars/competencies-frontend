@@ -3,17 +3,18 @@
     justify-content: center;
     flex-direction: column;
     padding: 10px;
-    background:linear-gradient(to left,#808080,#3fada8);
+    background:#e6d27867
 }
 .question{
     color: rgb(61, 14, 138);
-    margin-left: 120px;
+     margin-left: 120px;
     margin-top: 20px;
     margin-bottom: 10px;
-    margin-right: 120px;
+    /* margin-right: 180px; */
+    width: 82%;
     border: 1px rgb(80, 150, 255) solid;
     border-radius: 5px;
-    background-color: rgb(157, 196, 219);
+    background-color: #e6d27867
 }
 
 .answers{
@@ -22,15 +23,16 @@
     border:1px rgb(80, 150, 255) solid;
     margin-right: 120px;
     border-radius: 5px;
-    background-color: rgb(235, 214, 207);
+    background-color: #e6d27867
     
 }
 label{
     color:rgb(48, 7, 114);
-    font-size: 20px;
+    font-size: 18px;
+    font-weight:550;
 }
 .container2{
-    background:linear-gradient(to left,#808080,#3fada8);
+    
     width: 100%;
     padding-left: 6%;
 }
@@ -39,19 +41,20 @@ label{
     margin-top: 200px;
 }
 .qtitle{
-   padding-right: 110px;
+    margin-top: 10px;
+    /* margin-left: px; */
+   /* padding-right: 110px; */
 }
 .qbody{
    
-    margin-left: 180px;
-    background-color: rgb(235, 214, 207);
+    margin-left: 210px;
+    /* background-color: rgb(230, 222, 220); */
     margin-bottom: 20px;
     margin-right: 100px;
-    border-radius: 5px;
 }
 .tbody{
     background: none;
-    margin-left: 14%;
+    margin-left: 200px;
     margin-bottom: 20px;
 }
 
@@ -65,12 +68,28 @@ label{
 
 .post .btn{
     background-color: rgb(14, 67, 172);
-    margin-left: 19px;
-    margin-bottom: 12%;
+    margin-left: 40px;
+   
 }
 .ans{
-    margin-left: 130px;
+    margin-left: 120px;
 }
 .askbutton{
-    margin-left: 74px;
+    margin-left: 20px;
 }
+
+.editor{
+    margin-left: 40px;
+
+}
+.your-answer{
+    margin-left: 40px;
+}
+button{
+    background-color:rgb(14, 67, 172)
+}
+
+
+
+
+

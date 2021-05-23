@@ -1,10 +1,8 @@
 export class Question{
     constructor(
         public questionTitle:string,
-        public questionBody:string,
-        public questionTag:string[],
-        public email:any,
-        public views:number
-        
+        public questionBody:any,
+        public questionTag:Array<String>,
+        public email:any
     ){}
 }

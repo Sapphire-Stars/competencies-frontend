@@ -3,6 +3,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { error } from 'selenium-webdriver';
 import { Answer } from '../answer';
 import { EnrollmentService } from '../registration-page/enrollment.service';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
+
+
 
 @Component({
   selector: 'app-questions-and-answers',
@@ -18,6 +21,7 @@ export class QuestionsAndAnswersComponent implements OnInit {
   questionDetails: any;
   question: any;
   answerModel = new Answer();
+  htmlContent=''
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
 
@@ -115,10 +119,15 @@ export class QuestionsAndAnswersComponent implements OnInit {
       })
     
   }
+
+  myStyle = {
+    height: '300px'
+  }
  responseForAnswer:any;
   onSubmit() {
-    
-    this.service.postAnswer(this.questionDetails[0].questionTitle, this.answerModel).subscribe(data => {
+    console.log(this.answerModel)
+   this.service.postAnswer(this.questionDetails[0].questionTitle, this.answerModel).subscribe(data => {
+      
       console.log(data)
       this.responseForAnswer  = data
       
@@ -129,5 +138,54 @@ export class QuestionsAndAnswersComponent implements OnInit {
     // window.location.reload()
 
   }
+
+  
+
+editorConfig: AngularEditorConfig = {
+    editable: true,
+      spellcheck: false,
+      height: '300px',
+      minHeight: '0',
+      maxHeight: 'auto',
+      width: '1050px',
+      minWidth: '0',
+      translate: 'yes',
+      enableToolbar: true,
+      showToolbar: true,
+      placeholder: 'Enter text here...',
+      defaultParagraphSeparator: '',
+      defaultFontName: '',
+      defaultFontSize: '',
+      fonts: [
+        {class: 'arial', name: 'Arial'},
+        {class: 'times-new-roman', name: 'Times New Roman'},
+        {class: 'calibri', name: 'Calibri'},
+        {class: 'comic-sans-ms', name: 'Comic Sans MS'}
+      ],
+      customClasses: [
+      {
+        name: 'quote',
+        class: 'quote',
+      },
+      {
+        name: 'redText',
+        class: 'redText'
+      },
+      {
+        name: 'titleText',
+        class: 'titleText',
+        tag: 'h1',
+      },
+    ],
+    uploadUrl: 'v1/image',
+    uploadWithCredentials: false,
+    sanitize: true,
+    toolbarPosition: 'top',
+    toolbarHiddenButtons: [
+      [ 'italic'],
+      
+    ]
+    
+};
 
 }
