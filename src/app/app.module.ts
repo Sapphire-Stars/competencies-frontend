@@ -49,7 +49,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     routingComponents,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-
     UserProfileComponent,
     QuestionsAndAnswersComponent,
     AskQuestionComponent,
