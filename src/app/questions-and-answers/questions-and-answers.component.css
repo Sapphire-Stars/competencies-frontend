@@ -3,7 +3,7 @@
     justify-content: center;
     flex-direction: column;
     padding: 10px;
-    background:#e6d27867
+    background:#e6d27879
 }
 .question{
     color: rgb(61, 14, 138);
@@ -14,7 +14,7 @@
     width: 82%;
     border: 1px rgb(80, 150, 255) solid;
     border-radius: 5px;
-    background-color: #e6d27867
+    background-color: #e6d2782c
 }
 
 .answers{
@@ -23,7 +23,7 @@
     border:1px rgb(80, 150, 255) solid;
     margin-right: 120px;
     border-radius: 5px;
-    background-color: #e6d27867
+    background-color: #e6d2782f
     
 }
 label{

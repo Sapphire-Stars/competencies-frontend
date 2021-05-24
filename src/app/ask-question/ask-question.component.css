@@ -6,7 +6,7 @@
    /* display: flex;
     flex-direction: row;
     justify-content: center;*/
-   background:linear-gradient(to right,#134E5E,#71B280);
+   background:linear-gradient(to right,#e6d27867,#e6d27867);
 /*  background-image: url('https://miro.medium.com/max/12000/1*_YIuaml_vaFi-K2_A_eEBw.jpeg');*/
 /*background-image: url('https://texaslawhelp.org/sites/default/files/styles/full-16x9-lg/public/askaquestion_image.jpg?itok=7EKtp5iY');*/
   padding: 10px;
@@ -15,9 +15,9 @@
 {
    border:1px solid black;
    padding:10%;
-   background-color: #808080;
+   background-color: #e6d27867;
    border-radius: 20px;
-   background:linear-gradient(to left,#808080,#3fada8);
+   background:linear-gradient(to left,#e6d27867,#e6d27867);
    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; 
 }
 label{
@@ -59,6 +59,7 @@ label{
 .editor{
     padding:10px;
 }
+
 /*.row{
     display: flex;
     flex-direction: row;

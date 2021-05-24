@@ -61,7 +61,8 @@
     <ng-template #block1>
         <label class="ans">No one answered for this question yet</label>
     </ng-template>
-    <div class="answers row shadow" *ngFor="let answer of questionDetails[0].answers">
+    
+    <div class="answers row shadow" id="gradient" *ngFor="let answer of questionDetails[0].answers">
 
 
         <div class="col-sm-2">
@@ -109,6 +110,7 @@
     
         </form>
     </div>
+
 
 
 
