@@ -122,9 +122,6 @@ export class EnrollmentService {
 
   }
 
-    postProfileData(data:UserProfile){
-      return this._http.post<any>(this.profileUrl,data)
-    }
 
 }
 

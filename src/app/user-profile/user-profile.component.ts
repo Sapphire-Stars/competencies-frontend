@@ -35,10 +35,7 @@ export class UserProfileComponent implements OnInit {
   profileObj:any=new FormGroup({
     profilePicture:new FormControl('')
   })
-onSubmit(){
-  console.log(this.profileObj.value)
-  this.es.postProfileData(this.profileObj.value).subscribe(result=>{
-    console.log(result)
-  })
-}
+
+  
+
 }

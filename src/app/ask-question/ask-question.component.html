@@ -3,7 +3,7 @@
         <div class="col">
         <form [formGroup]="questionObj" method="post"(ngSubmit)="onSubmit()" class="formClass">
             
-        <h1 style="text-align: center;font-family: 'Merienda', cursive;">Ask Question Form</h1><hr>
+        <h1 style="text-align: center;font-family: 'Merienda', cursive; font-size: 45px;">Ask Question Form</h1><hr>
             <div class="form-group">
                 <label>Title</label>
                 <input type="text" class="form-control" placeholder="give title for question" formControlName="questionTitle"required>
@@ -16,7 +16,23 @@
             -->    <span class="error" *ngIf="questionBody.hasError('required')&& questionBody.touched">question body is required</span>
             
         </div>
-          
+            <!--<div class="form-group" formArrayName="questionTag" required>
+                <textarea cols="80" rows="20" class="form-control" name="questionBody"formControlName="questionBody" required ></textarea>
+                <span class="error" *ngIf="questionBody.hasError('required')&& questionBody.touched">question body is required</span>
+            </div>
+            <div class="form-group" formArrayName="questionTag" required>
+                <label>Tag</label>
+                <ng-container *ngFor="let tag of questionObj.get('questionTag').controls;index as i">
+                    <input style="margin-top: 10px;"type="text" class="form-control" placeholder="specify tag" autocomplete="off" formControlName="{{i}}" required>
+                <span class="error" *ngIf="questionTag.hasError('required')&& questionTag.touched">question tag is required</span>
+                </ng-container>
+                <button class="btn btn-secondary btn-lg" style="margin-top: 8px;color: white; padding: 12px 16px;
+                font-size: 23px;
+                font-weight: 300;
+                margin-left:10px;
+               
+font-family: 'Merienda', cursive;"(click)="addTags()" type="button"> add tags</button>
+               </div>-->
                <div class="form-group">
                    <label>Tags</label>
                 <mat-form-field class="example-chip-list">
@@ -33,14 +49,13 @@
                       <input
                         placeholder="New tag..."
                         #tagInput
-                        formControlName="questionTag"
                         [matChipInputFor]="chipList"
                         [matAutocomplete]="auto"
                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                         (matChipInputTokenEnd)="add($event)" >
                         
                     </mat-chip-list>
-                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"  >
                         <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                           {{option}}
                         </mat-option>
