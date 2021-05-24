@@ -29,31 +29,32 @@
               itemsPerPage: 5,
               currentPage: page,
               totalItems: totalRec }">
-                <div class="box2">
-                  <div class=views>
+                <div class="box2 row">
+                  <div class="col-1">
                   <span class="text-dark mr-2">Views</span><br>
-                  <i class="bi bi-eye"></i>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                   </svg>
                   <span class="text-dark">{{i.views}}</span>
                 </div>
-                  <div class="points">
+                  <div class="col-1">
                     <span>Points</span><br>
                     <span class="text-dark">{{i.points}}</span>
                   </div>
-                  <div class="length">
+                  <div class="col-1">
                     <span>Answers</span><br>
                     <span class="text-dark">{{i.answers.length}}</span>
                   </div><br>
   
-                  <div class="timestamps">
-                    <span class="text-dark">{{i.createdAt}}</span>
-                  </div>
-                 <div class="tags">
+                  
+                 <div class="col-6">
                     <p class="text-dark">Title:{{ i.questionTitle }}</p>
                    <small class="pl-1 pt-1"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn btn-primary btn-sm  btn-outline-success ml-1 mr-4 text-dark">{{ tag }}</button></span></small>
+                  </div>
+
+                  <div class="col-2">
+                    <span class="text-dark">{{i.createdAt}}</span>
                   </div>
                   
                   <br />

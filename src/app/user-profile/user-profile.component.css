@@ -13,7 +13,8 @@
     height: auto;
     border-radius: .5rem;
     margin-right: 2rem;
-    padding-right: 2rem;
+    /* padding-right: 2rem; */
+    padding:30px;
     box-shadow: 0 40px 60px -20px rgba(12, 5, 62, 0.15);
 }
  .box2:hover{
@@ -21,7 +22,8 @@
     cursor: pointer;
 }
 .card{
-    border:darkcyan
+    border:darkcyan;
+    padding: 30px;
   
 }
 #my-button{
@@ -80,12 +82,14 @@
     }
   }
 .views{
-    margin-bottom: -4rem;
+    margin-top:10px;
     margin-left: 3rem;
+    padding-top: 30px;
     
 }
 .timestamps{
-    margin-bottom: 3rem;
+    
+    margin-bottom: 5rem;
     margin-left: 89rem;
 }
 @media only screen and (max-width: 800px) {
