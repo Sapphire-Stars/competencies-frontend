@@ -117,6 +117,10 @@ export class EnrollmentService {
   voteAnswer(questionAnswerObj:any){
     return this._http.put(`${this.answerUrl}`,questionAnswerObj)
   }
+  questionByTags(value:any){
+    return this._http.get(`http://localhost:8900/api/questionByTagName/${value}`)
+
+  }
 
     postProfileData(data:UserProfile){
       return this._http.post<any>(this.profileUrl,data)

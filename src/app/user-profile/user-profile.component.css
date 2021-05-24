@@ -1,33 +1,28 @@
 .userProfile{
     width: 100%;
     height: 70px;
-    background-color: lightgreen;
+    background-color:#e6d27867 ;
     text-align: center;
     padding-top: 1px;
 }
-.card{
-    margin-top: 50px; 
-    
 
-}
-.container{
-    align-items: center;
-     justify-content: center;
-
-    
-}
-
+/* css box2 */
 .box2{
-    background: lightgreen;
+    background:#e6d27867;
     width: 100%;
     height: auto;
     border-radius: .5rem;
     margin-right: 2rem;
     padding-right: 2rem;
-
+    box-shadow: 0 40px 60px -20px rgba(12, 5, 62, 0.15);
+}
+ .box2:hover{
+    transform:scale(1.04);
+    cursor: pointer;
 }
 .card{
-    border:none
+    border:darkcyan
+  
 }
 #my-button{
     margin-top: -5rem;
@@ -40,16 +35,65 @@
 }
 .next{
     margin-left: 70%;
+    
+    
 }
+@media only screen and (max-width: 800px) {
+    .next {
+        margin-left: 32rem;
+        
+    }
+  }
 .gradient{
-    height: 200%;
-    background-color: red;
-    /* background-image: linear-gradient(to right, lightgreen , yellow); */
-    background:linear-gradient(to left,#808080,#3fada8);
+    height: auto;
+    background-color:#e6d27867; 
+    background-image: linear-gradient(to right,#e6d27867 ,#e6d27867);
     padding-bottom: 30%;
 }
-#my-button-5{
-    margin-top: -15rem;
+ #my-button-3{
+    margin-left: 550%;
 }
+.points{
+    margin-bottom: -4rem;
+    margin-left:10rem ;
+   
+    
+}
+.length{
+    /* margin-top: 2rem; */
+    margin-left:18rem ;
+   
 
- 
+    
+}
+.tags{
+    height: auto;
+    width: 100%;
+    margin-top: -13rem;
+    margin-left:28rem ;
+    
+}
+@media only screen and (max-width: 800px) {
+    .tags {
+      margin-top: -45rem;
+      margin-left: 2rem;
+    }
+  }
+.views{
+    margin-bottom: -4rem;
+    margin-left: 3rem;
+    
+}
+.timestamps{
+    margin-bottom: 3rem;
+    margin-left: 89rem;
+}
+@media only screen and (max-width: 800px) {
+    .timestamps1 {
+        margin-right: 22rem;
+    }
+}
+.text-box{
+    margin-left: 50rem;
+    
+}
