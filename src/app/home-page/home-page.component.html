@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="container-fluid ">
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <img  src="https://p.kindpng.com/picc/s/19-195403_stack-overflow-logo-hd-png-download.png" width="100" height="50" alt="">
     <input class="text-box" type="text" id="fname" name="fname" #fname>
@@ -37,8 +37,8 @@
             itemsPerPage: 5,
             currentPage: page,
             totalItems: totalRec }">
-              <div class="box2">
-                <div class=views>
+              <div class="box2 row">
+                <div class="col-md-1 col-12">
                 <span class="text-dark mr-2">Views</span><br>
                 
 
@@ -49,28 +49,30 @@
                 </svg>
                 <span class="text-dark">{{i.views}}</span>
               </div>
-                <div class="points">
+                <div class="col-md-1 col-12">
                   <span>Points</span><br>
                   <span class="text-dark">{{i.points}}</span>
                 </div>
-                <div class="length">
+                <div class="col-md-2 col-12">
                   <span>Answers</span><br>
                   <span class="text-dark">{{i.answers.length}}</span>
                 </div><br>
 
-                <div class="timestamps">
+                 
+                <div class="col-md-6 col-12">
+                  <p class="text-dark">Title:{{ i.questionTitle }}</p>
+                 <small class="pl-1 pt-1"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn btn-primary btn-sm  btn-outline-success ml-1 mr-4 text-dark">{{ tag }}</button></span></small>
+                </div>
+                
+
+                <div class="col-md-2 col-6">
                   <span class="text-dark">{{i.createdAt}}</span>
                 </div>
                
 
 
                 
-                
-                <div class="tags">
-                  <p class="text-dark">Title:{{ i.questionTitle }}</p>
-                 <small class="pl-1 pt-1"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn btn-primary btn-sm  btn-outline-success ml-1 mr-4 text-dark">{{ tag }}</button></span></small>
-                </div>
-                
+               
                 <br />
               </div>
               <br />
