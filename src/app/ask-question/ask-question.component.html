@@ -1,6 +1,5 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
+  
         <form [formGroup]="questionObj" method="post"(ngSubmit)="onSubmit()" class="formClass">
             
         <h1 style="text-align: center;font-family: 'Merienda', cursive; font-size: 45px;">Ask Question Form</h1><hr>
@@ -43,19 +42,20 @@ font-family: 'Merienda', cursive;"(click)="addTags()" type="button"> add tags</b
                         [selectable]="selectable"
                         [removable]="removable"
                         (removed)="remove(tag)">
-                        {{tag.name}}
+                        {{tag}}
                         <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                       </mat-chip>
                       <input
                         placeholder="New tag..."
                         #tagInput
+                        [formControl]="tagCtrl"
                         [matChipInputFor]="chipList"
                         [matAutocomplete]="auto"
                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                         (matChipInputTokenEnd)="add($event)" >
                         
                     </mat-chip-list>
-                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"  >
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="selected($event)" >
                         <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                           {{option}}
                         </mat-option>
@@ -65,7 +65,7 @@ font-family: 'Merienda', cursive;"(click)="addTags()" type="button"> add tags</b
                </div>
             <button class="btn btn-primary btn-lg" type="submit" [disabled]="!questionObj.valid" id="btn">Submit question</button>
         </form>
-    </div>
+    
 
  <!-- <div class="col-lg-4">
     <div class="card text-white bg-secondary  mb-3" style="max-width: 25rem; max-height: 20rem;">
@@ -82,5 +82,4 @@ font-family: 'Merienda', cursive;"(click)="addTags()" type="button"> add tags</b
         </div>
       </div>
   </div>-->
-</div>
 </div>

@@ -29,6 +29,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 
 import {  NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
 import { MatChipsModule } from "@angular/material/chips";
+import{MatProgressSpinnerModule}from "@angular/material/progress-spinner"
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MatIconModule } from "@angular/material/icon";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -58,6 +59,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     NgxPaginationModule,
     AngularEditorModule,
+    MatProgressSpinnerModule,
     MatChipsModule,
     MatAutocompleteModule,
     MatFormFieldModule,

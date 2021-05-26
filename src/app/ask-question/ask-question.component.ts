@@ -8,34 +8,47 @@ import {MatChipInputEvent} from '@angular/material/chips';
   import {Observable} from 'rxjs';
   import {map, startWith} from 'rxjs/operators';
   import { Router } from "@angular/router";
-export interface Tags {
-  name: string;
-}
+// export interface Tags {
+//   name: string;
+// }
 @Component({
   selector: 'app-ask-question',
   templateUrl: './ask-question.component.html',
   styleUrls: ['./ask-question.component.css']
 })
 export class AskQuestionComponent implements OnInit {
-
-
-
-  visible = true;
+ 
+ visible = true;
   selectable = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA,SPACE];
   questionObj!: any;
-//  questionTag:any;
-questionTagArray:Tags[]=[];
+ //questionTag:any;
+//questionTag=new FormControl()
+tagCtrl=new FormControl();
+questionTagArray:string[]=[];
   filteredOptions!: Observable<string[]>;
   //tags: string[] = ['nodejs'];
-  allTags: any[] = ['Angular', 'react', 'expressjs', 'javascript', 'html','css','bootstrap','restApi','mongodb'];
+  allTags: any[] = ['Angular', 'react', 'expressjs', 'javascript', 'html','css','bootstrap','restApi','mongodb','java'];
 
   
   @ViewChild('tagInput')
   tagInput!: ElementRef<HTMLInputElement>;
   @ViewChild('auto')
   matAutocomplete!: MatAutocomplete;
+//  questionTag!: FormControl;
+
+  createTag(value:any){
+    return this.fb.control(value);
+  }
+
+  addTag(value:any){
+    return this.questionObj.get('questionTag').push(this.createTag(value))
+  }
+
+  removeTag(index:number){
+    return this.questionObj.get('questionTag').removeAt(index)
+  }
 
 //questionObj:any= new FormGroup({ 
  
@@ -57,13 +70,14 @@ questionTagArray:Tags[]=[];
     this.questionObj=this.fb.group({
       questionTitle:['',[Validators.required]],
       questionBody:['',[Validators.required]],
-      questionTag:[this.questionTagArray],
+      questionTag:this.fb.array([this.createTag('')]),
 //      questionTag:[this.questionTagArray,[Validators.required]]
-    })
+    }
+    )
 
-    this.filteredOptions = this.questionObj.get('questionTag').valueChanges.pipe(
+    this.filteredOptions = this.tagCtrl.valueChanges.pipe(
       startWith(''),
-      map((value:any) => this._filter(value))
+      map((value:any) => value ? this._filter(value):this.allTags.slice())
     );
   }
   private _filter(value: string): string[] {
@@ -132,7 +146,7 @@ editorConfig: AngularEditorConfig = {
   //this.questionObj.get('questionTag').push(new FormControl(null,Validators.required))
 //}
 
-add(event: MatChipInputEvent): void {
+add(event:MatChipInputEvent): void {
   //const value = (event.value || '').trim();
 
   // Add our fruit
@@ -143,30 +157,68 @@ add(event: MatChipInputEvent): void {
   // Clear the input value
 //  event.chipInput!.clear();
 
-  //this.questionTag.setValue(null);
+//  this.questionTag.setValue(null);
+
   const input=event.input;
   const value=event.value;
-  if((value||'').trim()&&this.questionTagArray.length<5){
-this.questionTagArray.push({name:value.trim()})
-}
-if(input){
-  input.value='';
-}
+  console.log(value)
+
+  if(this.questionTagArray.length<5){
+    if((value || '').trim()){
+      this.questionTagArray.push(value.trim());
+      this.addTag(value);
+    }
+  }
+  if(input){
+    input.value='';
+  }
+  this.tagCtrl.setValue(null);
+//   if((value||'').trim()&&this.questionTagArray.length<5){
+// this.questionTagArray.push({name:value.trim()})
+// }
+// if(input){
+//   input.value='';
+// }
+
+
+// const value=(event.value || '').trim();
+// if(value){
+//   this.questionTagArray.push(value);
+// }
+//this.questionObj.get('questionTag').setValue(null)
+
 }
 
-remove(tags: Tags): void {
+remove(tags:string): void {
   const index = this.questionTagArray.indexOf(tags);
 
   if (index >= 0) {
     this.questionTagArray.splice(index, 1);
+    this.removeTag(index+1);
   }
 }
 
-// selected(event: MatAutocompleteSelectedEvent): void {
-//   this.questionTagArray.push(event.option.viewValue);
-//   this.tagInput.nativeElement.value = '';
-//   this.questionObj.get('questionTag').setValue(null);
-// }
+selected(event: any): void {
+  // this.questionTagArray.push(event.option.viewValue);
+if(this.questionTagArray.length<5){
+  this.questionTagArray.push(event.option.viewValue);
+
+  const value=event.option.viewValue;
+  
+  console.log(event.option.viewValue);
+ 
+  this.addTag(value);
+  const index=this.allTags.indexOf(value.trim());
+  if(index>=0){
+    this.allTags.splice(index,1)
+  }
+}
+  
+    
+    this.tagCtrl.setValue(null);
+  this.tagInput.nativeElement.value = '';
+//  this.questionObj.get('questionTag').setValue(null);
+}
 
 // private _filter(value: string): string[] {
 //   const filterValue = value.toLowerCase();
@@ -184,5 +236,6 @@ onSubmit(){
     console.log(result)
   })
   this.router.navigate(['/home-page'])
+
 }
 }
