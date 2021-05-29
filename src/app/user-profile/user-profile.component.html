@@ -11,8 +11,6 @@
         <h5 class="card-title">Email:{{data.email}}</h5>
         <h5 class="card-title">Phone Number:{{data.phone}}</h5>
         <h5 class="card-title">Company Name:{{data.company}}</h5>
-        <!-- <h5 class="card-title">Skills:{{data.skills}}</h5>
-        <h5 class="card-title">Hobbies:{{data.hobbies}}</h5> -->
       </div>
     </div>
     <button type="submit" id="my-button-5" class="btn btn-outline-success pull-right" routerLink="/update-profile" routerLinkActive=true >Update Profile</button>
@@ -29,8 +27,8 @@
               itemsPerPage: 5,
               currentPage: page,
               totalItems: totalRec }">
-                <div class="box2">
-                  <div class=views>
+                <div class="box2 row">
+                  <div class="views col-md-1 col-12">
                   <span class="text-dark mr-2">Views</span><br>
                   <i class="bi bi-eye"></i>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
@@ -39,21 +37,21 @@
                   </svg>
                   <span class="text-dark">{{i.views}}</span>
                 </div>
-                  <div class="points">
+                  <div class="points col-md-1 col-12">
                     <span>Points</span><br>
                     <span class="text-dark">{{i.points}}</span>
                   </div>
-                  <div class="length">
+                  <div class="length col-md-1 col-12">
                     <span>Answers</span><br>
                     <span class="text-dark">{{i.answers.length}}</span>
                   </div><br>
-  
-                  <div class="timestamps">
-                    <span class="text-dark">{{i.createdAt}}</span>
-                  </div>
-                 <div class="tags">
+                  <div class="tags col-md-6 col-12">
                     <p class="text-dark">Title:{{ i.questionTitle }}</p>
                    <small class="pl-1 pt-1"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn btn-primary btn-sm  btn-outline-success ml-1 mr-4 text-dark">{{ tag }}</button></span></small>
+                  </div>
+  
+                  <div class="timestamps col-md-2 col-12">
+                    <span class="text-dark">{{i.createdAt}}</span>
                   </div>
                   
                   <br />

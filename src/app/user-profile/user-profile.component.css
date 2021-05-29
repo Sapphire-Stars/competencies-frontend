@@ -10,6 +10,7 @@
 .box2{
     background:#e6d27867;
     width: 100%;
+    padding: 30px;
     height: auto;
     border-radius: .5rem;
     margin-right: 2rem;
@@ -21,7 +22,8 @@
     cursor: pointer;
 }
 .card{
-    border:darkcyan
+    border:darkcyan;
+    padding: 30px;
   
 }
 #my-button{
@@ -52,48 +54,4 @@
 }
  #my-button-3{
     margin-left: 550%;
-}
-.points{
-    margin-bottom: -4rem;
-    margin-left:10rem ;
-   
-    
-}
-.length{
-    /* margin-top: 2rem; */
-    margin-left:18rem ;
-   
-
-    
-}
-.tags{
-    height: auto;
-    width: 100%;
-    margin-top: -13rem;
-    margin-left:28rem ;
-    
-}
-@media only screen and (max-width: 800px) {
-    .tags {
-      margin-top: -45rem;
-      margin-left: 2rem;
-    }
-  }
-.views{
-    margin-bottom: -4rem;
-    margin-left: 3rem;
-    
-}
-.timestamps{
-    margin-bottom: 3rem;
-    margin-left: 89rem;
-}
-@media only screen and (max-width: 800px) {
-    .timestamps1 {
-        margin-right: 22rem;
-    }
-}
-.text-box{
-    margin-left: 50rem;
-    
 }
