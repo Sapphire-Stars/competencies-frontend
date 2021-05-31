@@ -24,6 +24,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
+
 //import {ConfirmEqualValidatorDirective} from './reset-password/shared/confirm-equal-validator.directive'
 
 // import { RegistrationPageComponent } from './registration-page/registration-page.component';
@@ -42,12 +43,6 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     HomePageComponent,
     LandingPageComponent,
     UpdateProfileComponent
-    
-   
-    
-   
-    
-
     // RegistrationPageComponent,
     // LoginPageComponent
   ],

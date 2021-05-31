@@ -1,73 +1,167 @@
-<div class="container-fluid">
-  <div class="userProfile">
-    <h1>User Profile Details</h1>
-  </div>
-  <br>
-  <div class="container">
-    <div class="card" style="width: 100%;height: auto;background-color:#e6d27867;">
-      <div class="card-body">
-        <h5 class="card-title">First Name:{{data.firstname}}</h5>
-        <h5 class="card-subtitle mb-2">Last Name:{{data.lastname}}</h5>
-        <h5 class="card-title">Email:{{data.email}}</h5>
-        <h5 class="card-title">Phone Number:{{data.phone}}</h5>
-        <h5 class="card-title">Company Name:{{data.company}}</h5>
-      </div>
-    </div>
-    <button type="submit" id="my-button-5" class="btn btn-outline-success pull-right" routerLink="/update-profile" routerLinkActive=true >Update Profile</button>
-  </div>
-  <div class="gradient">
-    <div class="container">
-      <h3>Posted question</h3>
-      <br/>
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="card" >
-            <div class="card-body">
-              <div  *ngFor="let i of question  | paginate: { id: 'listing_pagination',
-              itemsPerPage: 5,
-              currentPage: page,
-              totalItems: totalRec }">
-                <div class="box2 row">
-                  <div class="views col-md-1 col-12">
-                  <span class="text-dark mr-2">Views</span><br>
-                  <i class="bi bi-eye"></i>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                  </svg>
-                  <span class="text-dark">{{i.views}}</span>
-                </div>
-                  <div class="points col-md-1 col-12">
-                    <span>Points</span><br>
-                    <span class="text-dark">{{i.points}}</span>
-                  </div>
-                  <div class="length col-md-1 col-12">
-                    <span>Answers</span><br>
-                    <span class="text-dark">{{i.answers.length}}</span>
-                  </div><br>
-                  <div class="tags col-md-6 col-12">
-                    <p class="text-dark">Title:{{ i.questionTitle }}</p>
-                   <small class="pl-1 pt-1"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn btn-primary btn-sm  btn-outline-success ml-1 mr-4 text-dark">{{ tag }}</button></span></small>
-                  </div>
+<div class="container">
+  <div class="main-body">
   
-                  <div class="timestamps col-md-2 col-12">
-                    <span class="text-dark">{{i.createdAt}}</span>
+        <!-- navbar start -->
+        <nav aria-label="breadcrumb" class="main-breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/home-page">Home</a></li>
+            <li class="breadcrumb-item"><a routerLink="/askQuestion">Ask Questions</a></li>
+            <li class="breadcrumb-item"><a (click)="signOut()" >Signout</a></li>
+          </ol>
+        </nav>
+        <!-- nuvbar end -->
+  
+        <div class="row gutters-sm">
+          <div class="col-md-4 mb-3">
+              <!-- image-Card start -->
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                  <div class="mt-3">
+                    <h4>{{data.firstname}} {{data.lastname}}</h4>
+                    <p class="text-secondary mb-1">{{data.post}}</p>
+                    <!-- <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p> -->
+                    <button class="btn btn-primary">Change profile</button>
                   </div>
-                  
+                </div>
+              </div>
+            </div>
+            <!-- image card end -->
+            <!-- social media part start -->
+            <div class="card mt-3">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
+                  <span class="text-secondary pt-2">{{data.website}}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github mr-2 icon-inline"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>Github</h6>
+                  <span class="text-secondary pt-2">{{data.githubLink}}</span>
+                </li>
+              </ul>
+            </div>
+            <!-- social media part end -->
+          </div>
+          <div class="col-md-8">
+          <!-- user details parts -->
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h4 class="mb-0">Full Name</h4>
+                  </div>
+                  <div class="col-sm-9 text-dark pt-2" style="font-size: large;">
+                   {{data.firstname}} {{data.lastname}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h4 class="mb-0">Email</h4>
+                  </div>
+                  <div class="col-sm-9 text-dark pt-2" style="font-size: large;">
+                 {{data.email}} 
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h4 class="mb-0">Mobile</h4>
+                  </div>
+                  <div class="col-sm-9 text-dark pt-2" style="font-size: large;">
+                  {{data.phone}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h4 class="mb-0">Company</h4>
+                  </div>
+                  <div class="col-sm-9 text-dark pt-2" style="font-size: large;">
+                   {{data.company}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h4 class="mb-0">Skills</h4>
+                  </div>
+                  <div class="col-sm-9 text-dark pt-2" style="font-size: large;">
+                   {{data.skills}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <button class="btn btn-info " routerLink="/update-profile" routerLinkActive=true>Update Profile</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- user details end -->
+            <!-- project status start -->
+            <div class="row gutters-sm">
+              <div class="col-sm-12 mb-3">
+            </div>
+            <!-- project statuse end -->
+          </div>
+        </div>
+        <div class="container">
+          <h3>Posted question</h3>
+          <br/>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card" >
+                <div class="card-body">
+                  <div  (click)="onClick(i.questionTitle)" *ngFor="let i of question  | paginate: { id: 'listing_pagination',
+                  itemsPerPage: 5,
+                  currentPage: page,
+                  totalItems: totalRec }">
+                    <div class="box2 row">
+                      <div class="views col-md-1 col-12">
+                      <span class="text-dark mr-1" style="font-size: large;">Views</span><br>
+                      <i class="bi bi-eye"></i>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                      </svg>
+                      <span class="text-dark" style="font-size: large;">{{i.views}}</span>
+                    </div>
+                      <div class="points col-md-1 col-12">
+                        <span style="font-size: large;">Points</span><br>
+                        <span class="text-dark" style="font-size: large;">{{i.points}}</span>
+                      </div>
+                      <div class="length col-md-2 col-12">
+                        <span style="font-size: large;">Answers</span><br>
+                        <span class="text-dark" style="font-size: large;">{{i.answers.length}}</span>
+                      </div><br>
+                      <div class="tags col-md-6 col-12">
+                        <p class="text-dark" style="font-size: large;">Title:{{ i.questionTitle }}</p>
+                       <small class="pl-1 pt-1" style="font-size: large;"> Tags:<span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn btn-primary btn-sm  btn-outline-success ml-1 mr-4 text-dark">{{ tag }}</button></span></small>
+                      </div>
+      
+                      <div class="timestamps col-md-2 col-12">
+                        <span class="text-dark " style="font-size: large;">{{i.createdAt}}</span>
+                      </div>
+                      
+                      <br />
+                    </div>
+                    <br />
+                  </div>
+      
                   <br />
                 </div>
-                <br />
               </div>
-  
-              <br />
             </div>
           </div>
         </div>
+        <div class="next">
+          <pagination-controls  id="listing_pagination" maxSize:any="5" directionLinks:any="true" (pageChange)="page = $event"></pagination-controls>
+        </div>
+
+
       </div>
-    </div>
-    <div class="next">
-      <pagination-controls  id="listing_pagination" maxSize:any="5" directionLinks:any="true" (pageChange)="page = $event"></pagination-controls>
-    </div>
   </div>
-</div>
+
 

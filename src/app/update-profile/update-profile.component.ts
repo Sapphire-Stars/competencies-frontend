@@ -17,15 +17,12 @@ export class UpdateProfileComponent implements OnInit {
     phone:new FormControl(),
     company:new FormControl(''),
     skills:new FormArray([]),
-    hobbies:new FormArray([])
-  })
+    hobbies:new FormArray([]),
+    website:new FormControl(''),
+    githubLink:new FormControl(''),
+    post:new FormControl('')
 
-  // get phone(){
-  //   return this.updateProfile.get('phone')
-  // }
-  // get company(){
-  //   return this.updateProfile.get('company')
-  // }
+  })
   addskill(){
     this.updateProfile.get('skills').push(new FormControl())
   }
