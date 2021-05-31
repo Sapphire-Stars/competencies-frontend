@@ -4,6 +4,8 @@ import {Observable} from 'rxjs'
 import {Router} from '@angular/router'
 import { LandingPageComponent } from '../landing-page/landing-page.component';
 import { Question } from '../ask-question/askQuestion';
+// import { Pipe, PipeTransform } from '@angular/core';
+// @Pipe({ name: 'reverse' })
 
 @Component({
   selector: 'app-home-page',
@@ -50,5 +52,13 @@ export class HomePageComponent implements OnInit {
       this.data=data
     })
   }
+  // transform(value:any) {
+  //      return value.slice().reverse();
+  //      }
 
 }
+// export class ReversePipe implements PipeTransform {
+//   transform(value:any) {
+//     return value.slice().reverse();
+//   }
+// }

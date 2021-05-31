@@ -1,29 +1,42 @@
 
-<div class="container-fluid ">
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <img  src="https://p.kindpng.com/picc/s/19-195403_stack-overflow-logo-hd-png-download.png" width="100" height="50" alt="">
-    <input class="text-box" type="text" id="fname" name="fname" #fname>
-    <button (click)="searchQuestionsByTags(fname.value)" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-        
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ml-auto">
-         
-          <button id="my-button-3" class="btn btn-primary" routerLink="/user-profile" routerLinkActive=true >Profile</button>
-       
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+  <span style="font-size: large;">Questions</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+  
+          <a class="dropdown-item" (click)="signOut()" routerLinkActive=true>Signout</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/user-profile" routerLinkActive=true>Profile</a>
         </div>
-    </div>
+      </li>
+  
+    </ul>
+    <form class="form-inline my-2 my-lg-0 ">
+      <input class="form-control mr-sm-2 mt-3" type="search" placeholder="Search" aria-label="Search" #fname>
+      <button (click)="searchQuestionsByTags(fname.value)" class="btn btn-outline-success my-2 my-sm-0 mt-3" type="submit">Search</button>
+    </form>
+  </div>
 </nav>
 
-</div>
+
+
 <div class="gradient">
   <div class="container">
     
-    <button id="my-button-5" class="btn btn-primary pull-right mt-2 " (click)="signOut()" routerLinkActive=true >Signout</button>
+
     <h1 style="margin-left: 0rem mr-8">Top Questions</h1>
     <button id="my-button-5" class="btn btn-primary pull-right" routerLink="/askQuestion" routerLinkActive=true >Ask Question</button>
      
@@ -33,7 +46,7 @@
       <div class="col-sm-12">
         <div class="card my-card" >
           <div class="card-body">
-            <div  (click)="onClick(i.questionTitle)" *ngFor="let i of data  | paginate: { id: 'listing_pagination',
+            <div  (click)="onClick(i.questionTitle)" *ngFor="let i of data.slice().reverse()  | paginate: { id: 'listing_pagination',
             itemsPerPage: 5,
             currentPage: page,
             totalItems: totalRec }">

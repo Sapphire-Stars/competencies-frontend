@@ -1,0 +1,18 @@
+<h1>Create Profile</h1>
+<hr />
+<form [formGroup]="form" (submit)="onSubmit()" class="form">
+    <div>
+      <input formControlName="email" type="text" placeholder="Enter email..." />
+    </div>
+    <div>
+      <input (change)="onFileSelect($event)" type="file" class="input" />
+    </div>
+    <div>
+      <button type="submit">Upload profile</button><br><br>
+      <button type="button" (click)="getMyImage()">Get profile</button>
+    </div>
+    <div>
+        
+        <img src="{{profile}}" width="200px" height="230px">
+    </div>
+  </form>

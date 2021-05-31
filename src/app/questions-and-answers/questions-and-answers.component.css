@@ -100,4 +100,42 @@ button{
 
 
 
+.points{
+    margin-top: 200px;
+}
+.qtitle{
+   padding-right: 110px;
+}
+.qbody{
+   
+    margin-left: 180px;
+    background-color: rgb(235, 214, 207);
+    margin-bottom: 20px;
+    margin-right: 100px;
+    border-radius: 5px;
+}
+.tbody{
+    background: none;
+    margin-left: 14%;
+    margin-bottom: 20px;
+}
 
+.desc{
+    margin-left: 15%;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+
+
+.post .btn{
+    background-color: rgb(14, 67, 172);
+    margin-left: 19px;
+    margin-bottom: 12%;
+}
+.ans{
+    margin-left: 130px;
+}
+.askbutton{
+    margin-left: 74px;
+}
