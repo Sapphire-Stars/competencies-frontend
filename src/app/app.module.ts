@@ -47,7 +47,8 @@ import { CreateProfileComponent } from './create-profile/create-profile.componen
     HomePageComponent,
     LandingPageComponent,
     UpdateProfileComponent,
-    CreateProfileComponent,
+    CreateProfileComponent
+ 
   
   ],
   imports: [
