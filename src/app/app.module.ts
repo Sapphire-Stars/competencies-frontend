@@ -22,7 +22,7 @@ import {HomePageComponent} from './home-page/home-page.component'
 import {NgxPaginationModule} from 'ngx-pagination'
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-
+import { QuillModule } from "ngx-quill";
 
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
@@ -65,8 +65,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatIconModule,
     BrowserAnimationsModule ,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    QuillModule.forRoot({
     
+    })
+
   ],
   
   providers: [{ 

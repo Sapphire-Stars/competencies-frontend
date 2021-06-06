@@ -52,7 +52,7 @@ export class QuestionsAndAnswersComponent implements OnInit {
       else {
         this.questionDetails[0].points++;
       }
-
+''
     }, error => {
       console.log(error)
     })
