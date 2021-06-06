@@ -33,7 +33,7 @@
       <div class="col-sm-12">
         <div class="card my-card" >
           <div class="card-body">
-            <div  (click)="onClick(i.questionTitle)" *ngFor="let i of data  | paginate: { id: 'listing_pagination',
+            <div  (click)="onClick(i.questionTitle)" *ngFor="let i of data.slice().reverse()  | paginate: { id: 'listing_pagination',
             itemsPerPage: 5,
             currentPage: page,
             totalItems: totalRec }">
@@ -61,17 +61,13 @@
                  
                 <div class="col-md-6 col-12">
                   <p class="text-dark" style="font-size: large;">Title:{{ i.questionTitle }}</p>
-                 <small class="pl-1 pt-1" style="font-size: large;"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn text-light ml-2 mr-2 ">{{ tag }}</button></span></small>
+                 <small class="pl-1 pt-1" style="font-size: large;"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn text-light ml-2 mr-2 mt-1">{{ tag }}</button></span></small>
                 </div>
                 
 
                 <div class="col-md-2 col-6">
                   <span class="text-dark" style="font-size: medium;">{{i.createdAt}}</span>
                 </div>
-               
-
-
-                
                
                 <br />
               </div>

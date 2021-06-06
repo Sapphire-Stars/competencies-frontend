@@ -1,35 +1,84 @@
 .container-fluid{
     display: grid;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
     padding: 10px;
-    background:#e6d27879
+    height: auto;
+    background: #6190E8;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A7BFE8, #6190E8);
+}
+.ss{
+    margin-left: 110px;
+    margin-right: 110px;
+}
+.icon:hover{
+   border-left:1px purple solid;
+}
+.card{
+    border:darkcyan
 }
 .question{
+    padding: 25px;
+}
+
+
+
+.mycard{
+
+    padding: 25px;
+
+}
+.card:hover{
+    transform:scale(1.01);
+    cursor: pointer;
+    border-left: 8px purple solid;
+}
+.ans, .noans{
+    padding-left: 56px;
+    margin-top: 5px;
+    font-size:18px
+}
+.your-answer{
+    font-size:18px
+}
+
+.qauthor{
+    
+    padding:9px;
+    border-left:4px purple solid;
+    background-color: rgb(228, 190, 228);
+}
+
+.author{
+    float:right;
+    margin-right: 85px;
+    padding:9px;
+    border-left:4px purple solid;
+    background-color: rgb(228, 190, 211);
+}
+
+/* .question{
     color: rgb(61, 14, 138);
      margin-left: 120px;
     margin-top: 20px;
     margin-bottom: 10px;
-    /* margin-right: 180px; */
+ 
     width: 82%;
-    /* border: 1px rgb(80, 150, 255) solid; */
+    
     border-radius: 25px;
     background-color: rgb(226, 180, 119)
 }
-/* .row{
-    background:burlywood;
-    border-radius: 30px;
-    box-shadow: 12px 12px 22px;
-} */
+
 
 .answers{
     margin-left: 120px;
     margin-bottom: 30px;
-    /* border:1px rgb(80, 150, 255) solid; */
+    
     margin-right: 120px;
     border-radius: 25px;
     padding:40px;
-    /* background-color: #e6d27867 */
+   
     background-color:burlywood;
     box-shadow: 18px 18px 18px;
     
@@ -50,13 +99,12 @@ label{
 }
 .qtitle{
     margin-top: 10px;
-    /* margin-left: px; */
-   /* padding-right: 110px; */
+    
 }
 .qbody{
    
     margin-left: 210px;
-    /* background-color: rgb(230, 222, 220); */
+    
     margin-bottom: 20px;
     margin-right: 100px;
 }
@@ -100,4 +148,4 @@ button{
 
 
 
-
+ */

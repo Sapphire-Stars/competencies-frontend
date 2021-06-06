@@ -1,0 +1,71 @@
+<div class="container-fluid ">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <img src="https://p.kindpng.com/picc/s/19-195403_stack-overflow-logo-hd-png-download.png" width="100"
+            height="50" alt="">
+        <input class="text-box" type="text" id="fname" name="fname" #fname>
+        <button (click)="searchQuestionsByTags(fname.value)" class="btn btn-outline-primary my-2 my-sm-0"
+            type="submit">Search</button>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ml-auto">
+
+                <button id="my-button-3" class="btn btn-primary" routerLink="/user-profile"
+                    routerLinkActive=true>Profile</button>
+
+
+            </div>
+        </div>
+    </nav>
+
+</div>
+<div class="gradient">
+    <div class="container">
+
+        <button id="my-button-5" class="btn btn-primary pull-right mt-2 " (click)="signOut()"
+            routerLinkActive=true>Signout</button>
+        <h1 style="margin-left: 0rem mr-8">Top Questions</h1>
+        <button id="my-button-5" class="btn btn-primary pull-right" routerLink="/askQuestion" routerLinkActive=true>Ask
+            Question</button>
+
+        <br /><br />
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card my-card">
+                    <div class="card-body">
+                        <div *ngFor="let user of users | paginate: { id: 'listing_pagination',
+              itemsPerPage: 5,
+              currentPage: page,
+              totalItems: totalRec }; index as i">
+                            <div class="box2 row">
+                                <div class="col-2">
+                                    <h3>Rank: {{i+1}}</h3>
+                                </div>
+                                <div class="col-3">
+                                    <img src="https://th.bing.com/th/id/R9d32bec8058bd3595a63a08a8cc12ade?rik=9cCTin36GLU%2f5w&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_87237.png&ehk=hVpH%2bC7rwlA1j2KqxGpMs1sp9l0RgM0jjRJsJsvDoPc%3d&risl=&pid=ImgRaw" alt="Profile" height="100px" width="100px">
+                                </div>
+                                <div class="col-6">
+                                    <h3>Name : {{user.firstname}} {{user.lastname}}</h3>
+                                    <h3>Points : {{user.points}}</h3>
+                                    <h3>Company : {{user.company}}</h3>
+                                    <h3>Email: {{user.email}}</h3>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="next">
+        <pagination-controls id="listing_pagination" maxSize:any="5" directionLinks:any="true"
+            (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>

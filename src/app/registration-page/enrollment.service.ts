@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Registration } from './registration';
 import { Login } from '../login-page/login'
 import { ForgotPassword } from '../forgot-password/forgot-password';
@@ -20,111 +20,112 @@ export class EnrollmentService {
   _url = 'http://localhost:8900/api/registrations';
   _loginUrl = 'http://localhost:8900/api/login';
   _checkUser = 'http://localhost:8900/api/check'
- _updateUrl:any
- questionUrl="http://localhost:8900/api/questions";
+  _updateUrl: any
+  questionUrl = "http://localhost:8900/api/questions";
+  _users="http://localhost:8900/api/users"
 
 
- activeUrl = 'http://localhost:8900/api/active-user'
-//  updateProfileUrl = 'http://localhost:8900/api/userProfileUpdate/:email'
+  activeUrl = 'http://localhost:8900/api/active-user'
+  //  updateProfileUrl = 'http://localhost:8900/api/userProfileUpdate/:email'
 
- 
 
- answerUrl="http://localhost:8900/api/answer";
 
- 
- profileUrl="http://localhost:8900/api/single";
+  answerUrl = "http://localhost:8900/api/answer";
+
+
+  profileUrl = "http://localhost:8900/api/single";
   constructor(private _http: HttpClient) { }
 
   enroll(user: Registration) {
-    return this._http.post<any>(this._url,user);
-        
+    return this._http.post<any>(this._url, user);
+
   }
 
-  login(user: Login){
-    return this._http.post<any>(this._loginUrl,user)
+  login(user: Login) {
+    return this._http.post<any>(this._loginUrl, user)
   }
 
-  checkUser(user: ForgotPassword){
-    return this._http.post<any>(this._checkUser,user)
+  checkUser(user: ForgotPassword) {
+    return this._http.post<any>(this._checkUser, user)
   }
 
-  getToken(){ 
+  getToken() {
     return localStorage.getItem('token');
   }
-  update(user:ResetPassword,email:any,token:any){
-   this. _updateUrl=`http://localhost:8900/api/reset-password/${email}/${token}`
-   return this._http.post<any>(this._updateUrl,user)
+  update(user: ResetPassword, email: any, token: any) {
+    this._updateUrl = `http://localhost:8900/api/reset-password/${email}/${token}`
+    return this._http.post<any>(this._updateUrl, user)
   }
-  getLink(user:ForgotPassword){
-    let url='http://localhost:8900/api/forget-password'
-    return this._http.post<any>(url,user)
+  getLink(user: ForgotPassword) {
+    let url = 'http://localhost:8900/api/forget-password'
+    return this._http.post<any>(url, user)
   }
 
-  getProfile(){
+  getProfile() {
     return this._http.get<any>(this._url)
   }
 
 
-  postAnswer(question:any,answer:Answer){
-    answer.author=localStorage.getItem('email')
-    let url=`http://localhost:8900/api/answer/${question}`
-    return this._http.post(url,answer)
+  postAnswer(question: any, answer: Answer) {
+    answer.author = localStorage.getItem('email')
+    let url = `http://localhost:8900/api/answer/${question}`
+    return this._http.post(url, answer)
   }
-  postQuestions(data:Question){ 
+  postQuestions(data: Question) {
 
     //get email from local storage
-   let userEmail =localStorage.getItem('email')
+    let userEmail = localStorage.getItem('email')
 
 
 
-   data.email=userEmail;
-    return this._http.post<any>(this.questionUrl,data);
+    data.email = userEmail;
+    return this._http.post<any>(this.questionUrl, data);
   }
-  getQuestions(){
+  getQuestions() {
     return this._http.get(this.questionUrl)
   }
-  getQuetionDetails(question:any){
+  getQuetionDetails(question: any) {
     return this._http.get(`${this.questionUrl}/${question}`)
   }
-  getQuestionViews(question:any){
-    let myUrl=`http://localhost:8900/api/views`
-    return this._http.patch<any>(myUrl,question)
+  getQuestionViews(question: any) {
+    let myUrl = `http://localhost:8900/api/views`
+    return this._http.patch<any>(myUrl, question)
   }
 
-  
-
-  
-
-  getProfileDetails(user:Active){
-    let userEmail =localStorage.getItem('email')
-     user.email=userEmail
-     return this._http.post<any>(this.activeUrl,user)
+  getProfileDetails(user: Active) {
+    let userEmail = localStorage.getItem('email')
+    user.email = userEmail
+    return this._http.post<any>(this.activeUrl, user)
   }
-  getUserQuestion(){
-    let userEmail =localStorage.getItem('email')
+  getUserQuestion() {
+    let userEmail = localStorage.getItem('email')
     return this._http.get(`http://localhost:8900/api/questionsOfUser/${userEmail}`)
   }
   //update user profile
-  updateUserProfile(up:updateUser){
+  updateUserProfile(up: updateUser) {
     let user = localStorage.getItem('email')
     console.log(up)
-    return this._http.patch(`http://localhost:8900/api/userProfileUpdate/${user}`,up)
+    return this._http.patch(`http://localhost:8900/api/userProfileUpdate/${user}`, up)
   }
-  voteQuestion(question:any){
-    return this._http.put(`${this.questionUrl}`,question)
+  voteQuestion(question: any) {
+    return this._http.put(`${this.questionUrl}`, question)
   }
 
-  voteAnswer(questionAnswerObj:any){
-    return this._http.put(`${this.answerUrl}`,questionAnswerObj)
+  voteAnswer(questionAnswerObj: any) {
+    return this._http.put(`${this.answerUrl}`, questionAnswerObj)
   }
-  questionByTags(value:any){
+  questionByTags(value: any) {
     return this._http.get(`http://localhost:8900/api/questionByTagName/${value}`)
 
   }
 
-    postProfileData(data:UserProfile){
-      return this._http.post<any>(this.profileUrl,data)
-    }
+  postProfileData(data: UserProfile) {
+    return this._http.post<any>(this.profileUrl, data)
+  }
+
+  getUsers(){
+    return this._http.get(this._users)
+  }
 
 }
 

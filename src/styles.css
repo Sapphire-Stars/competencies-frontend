@@ -3,3 +3,14 @@
 @import url( 'https://fonts.googleapis.com/css?family=Roboto:400,700|Material+Icons');*/
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@media screen and (max-width: 300px){
+    html{
+        background: #6190E8; 
+  
+    }
+
+    .author{
+        margin-left: 100px;
+        width: 90%;
+    }
+}
