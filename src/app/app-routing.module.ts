@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AskQuestionComponent } from './ask-question/ask-question.component';
 import { AuthGuard } from './auth.guard';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
 
   {path:'askQuestion',component:AskQuestionComponent,canActivate:[AuthGuard]},
   {path:'update-profile',component:UpdateProfileComponent},
-  {path:'create-profile',component:CreateProfileComponent}
+  {path:'create-profile',component:CreateProfileComponent},
+  {path:'dashboard', component:DashboardComponent}
 
 ];
 

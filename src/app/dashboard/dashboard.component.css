@@ -1,0 +1,50 @@
+.box2{
+    background:whitesmoke;
+    width: 95%;
+    height:20rem;
+    margin:5px;
+    margin-left:20px;
+    padding:25px;
+    box-shadow: 0 40px 60px -20px rgba(12, 5, 62, 0.15);
+    
+}
+
+.box2:hover{
+    transform:scale(1.01);
+    cursor: pointer;
+    border-left: 8px purple solid;
+   
+}
+.card{
+    border:darkcyan
+}
+#my-button{
+    margin-top: -5rem;
+    margin-right: 1%;
+
+}
+#my-button-1{
+    height:25px;
+    background-color:#3977eb;
+    padding-bottom: 2rem;
+}
+.next{
+    margin-left: 70%;
+}
+.gradient{
+    height: auto;
+    background: #6190E8;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#my-button-3{
+    margin-left: 550%;
+}
+
+.text-box{
+    margin-left: 50rem;
+}
+.my-card{
+    background-color:#A7BFE8;
+}

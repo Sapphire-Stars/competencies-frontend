@@ -34,6 +34,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -47,8 +48,9 @@ import { CreateProfileComponent } from './create-profile/create-profile.componen
     HomePageComponent,
     LandingPageComponent,
     UpdateProfileComponent,
-    CreateProfileComponent
+    CreateProfileComponent,
  
+    DashboardComponent,
   
   ],
   imports: [

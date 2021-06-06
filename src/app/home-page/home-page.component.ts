@@ -38,8 +38,6 @@ export class HomePageComponent implements OnInit {
       this.data=data
     })
 
-    
-
     this.route.navigate(['./questions',value])
   }
   signOut(){
