@@ -28,7 +28,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 
 
 import {  NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
-import { MatChipsModule } from "@angular/material/chips";
+ import { MatChipsModule } from "@angular/material/chips";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MatIconModule } from "@angular/material/icon";
 import { MatFormFieldModule } from "@angular/material/form-field";
