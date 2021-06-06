@@ -80,3 +80,9 @@
 .my-card{
     background-color:#A7BFE8;
 }
+#mynavbar{
+    justify-content: flex-end;
+}
+/* .example-spacer{
+    flex:10 10 auto
+} */

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from "@angular/forms";
-import { Profile } from "../models/profile";
+//import { Profile } from "../models/profile";
+import Swal from 'sweetalert2'
 
 import { Subscription } from "rxjs";
 //import { ProfileService } from '../profile.service';
@@ -56,6 +57,14 @@ export class CreateProfileComponent implements OnInit {
     this.onUpload(fd).subscribe(data=>{
       console.log(data)
     })
+    
+    // Swal.fire('Your profile pic has been updated!')
+    Swal.fire({
+      icon: 'success',
+      title: 'Profile Pic Updated',
+      text: 'So far so good..',
+    })
+    
   }
   getMyImage(){
     this.showImage().subscribe(data=>{

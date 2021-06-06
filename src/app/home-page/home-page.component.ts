@@ -4,6 +4,7 @@ import {Observable} from 'rxjs'
 import {Router} from '@angular/router'
 import { LandingPageComponent } from '../landing-page/landing-page.component';
 import { Question } from '../ask-question/askQuestion';
+import Swal from 'sweetalert2'
 // import { Pipe, PipeTransform } from '@angular/core';
 // @Pipe({ name: 'reverse' })
 
@@ -44,7 +45,13 @@ export class HomePageComponent implements OnInit {
   signOut(){
     localStorage.removeItem('token')
     localStorage.removeItem('email')
+    Swal.fire({
+      icon: 'success',
+      title: 'Logged Off',
+      text: 'See you again',
+    })
     this.route.navigate(['/login'])
+
   }
   searchQuestionsByTags(tag:any){
     this.es.questionByTags(tag).subscribe(data=>{

@@ -1,18 +1,15 @@
-<h1>Create Profile</h1>
+<h1 class="text-center font-italic font-weight-bold">Upload Your Profile Picture</h1>
 <hr />
-<form [formGroup]="form" (submit)="onSubmit()" class="form">
-    <div>
-      <input formControlName="email" type="text" placeholder="Enter email..." />
-    </div>
-    <div>
-      <input (change)="onFileSelect($event)" type="file" class="input" />
-    </div>
-    <div>
-      <button type="submit">Upload profile</button><br><br>
-      <button type="button" (click)="getMyImage()">Get profile</button>
-    </div>
-    <div>
-        
-        <img src="{{profile}}" width="200px" height="230px">
-    </div>
-  </form>
+
+            <form  [formGroup]="form" (submit)="onSubmit()" class="form">
+                <span class="label label-info mr-4">Email</span>
+                <input  formControlName="email" type="text" placeholder="Enter email..." /><br><br><br>
+              
+                <input (change)="onFileSelect($event)" type="file" class="input mr" /><br><br><br>
+                <button class="button" type="submit">Upload Picture</button>
+                <!-- <button type="button" (click)="getMyImage()">Get profile</button> -->
+                <!-- <img src="{{profile}}" width="200px" height="230px"> -->
+            </form>
+           
+           
+    

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EnrollmentService } from './enrollment.service';
 import { Registration } from './registration';
-
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-registration-page',
@@ -26,7 +26,12 @@ export class RegistrationPageComponent implements OnInit {
         .subscribe(
           data =>{
             this.validator=false;
-            window.alert("verification link has been sent to your mail, please verify!")
+           // window.alert("verification link has been sent to your mail, please verify!")
+           Swal.fire({
+            icon: 'success',
+            title: 'verification link has been sent to your mail, please verify!',
+            text: 'Hurry up',
+          })
             console.log('Success!',data)},
           error=>{
             this.validator=true;

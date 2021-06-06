@@ -3,6 +3,8 @@ import { $ } from 'protractor';
 import { EnrollmentService } from '../registration-page/enrollment.service';
 import { Login } from './login';
 import { Router} from "@angular/router";
+import Swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-login-page',
@@ -34,7 +36,14 @@ export class LoginPageComponent implements OnInit {
           localStorage.setItem('token',data.token)
           localStorage.setItem('email',this.userModel.email)
           this.route.navigate(['/home-page'])
-          window.alert("login successfull")
+         // window.alert("login successfull")
+         Swal.fire({
+          icon: 'success',
+          title: 'Login successfull',
+          text: 'Here you go....',
+        
+        })
+
              localStorage.setItem('token',data.token)
              
              //getting  token and decoding it and storing into local storage

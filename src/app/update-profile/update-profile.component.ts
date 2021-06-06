@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray,FormControl,FormGroup } from '@angular/forms';
 import { EnrollmentService } from '../registration-page/enrollment.service';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-update-profile',
   templateUrl: './update-profile.component.html',
@@ -30,7 +30,13 @@ export class UpdateProfileComponent implements OnInit {
     this.updateProfile.get('hobbies').push(new FormControl())
   }
   onSubmit(){
-    window.alert("You have successfully Updated Profile")
+   // window.alert("You have successfully Updated Profile")
+   Swal.fire({
+    icon: 'success',
+    title: 'You have successfully Updated Profile',
+    text: 'Done..',
+  })
+
     console.log(this.updateProfile.value)
     this.updateservice.updateUserProfile(this.updateProfile.value).subscribe(updateprofile=>{
       console.log(updateprofile)
