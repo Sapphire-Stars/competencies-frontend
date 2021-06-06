@@ -1,3 +1,57 @@
+<<<<<<< HEAD
+=======
+/* .container-fluid{
+    display: grid;
+    justify-content: center;
+    flex-direction: column;
+    background:linear-gradient(to left,#808080,#3fada8); */
+  /* background-image: url('https://miro.medium.com/max/12000/1*_YIuaml_vaFi-K2_A_eEBw.jpeg'); */
+/* background-image: url('https://texaslawhelp.org/sites/default/files/styles/full-16x9-lg/public/askaquestion_image.jpg?itok=7EKtp5iY'); */
+  /* background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed; */
+  /* padding: 10px; */
+  /* margin-top: 10rem;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+label{
+    font-size: 25px;
+    font-weight: bold;
+}
+.form-control{
+  height: 70px;
+    font-size: 16px;
+    background-color:rgb(231, 231, 116);
+}
+textarea{
+    height: 60px;
+    width: 100%;
+}
+button:nth-child(2){
+    padding: 7px;
+    font-size: 20px;
+    margin-left:10px;
+}
+.error{
+    font-size: 20px;
+    color:red;
+    background-color: yellow;
+}
+#buttonUp{
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-left: 8rem;
+}
+label{
+    color: black;
+} */
+
+
+>>>>>>> origin/feature-question
 
 /* new css  */
 

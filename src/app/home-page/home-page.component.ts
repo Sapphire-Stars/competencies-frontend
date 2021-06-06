@@ -57,9 +57,12 @@ export class HomePageComponent implements OnInit {
       this.data=data
     })
   }
+<<<<<<< HEAD
   // transform(value:any) {
   //      return value.slice().reverse();
   //      }
+=======
+>>>>>>> origin/feature-question
 
 }
 // export class ReversePipe implements PipeTransform {

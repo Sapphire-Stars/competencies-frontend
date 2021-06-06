@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container-fluid">
   
   <form [formGroup]="questionObj" method="post"(ngSubmit)="onSubmit()" class="formClass">
@@ -80,6 +81,114 @@ font-family: 'Merienda', cursive;"(click)="addTags()" type="button"> add tags</b
       Include any error messages
     </p>
   </div>
+=======
+<nav  class="navbar navbar-expand-sm navbar-light bg-light">
+  <img  src="https://p.kindpng.com/picc/s/19-195403_stack-overflow-logo-hd-png-download.png" width="100" height="50" alt="">
+
+</nav>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-9">
+      
+      <h1 style="text-align: center;font-family: 'Merienda', cursive;">ask a public question</h1>
+      <div class="card">
+        <form [formGroup]="questionObj" method="post"(ngSubmit)="onSubmit()" class="formClass">
+            
+        <!-- <h1 style="text-align: center;font-family: 'Merienda', cursive; font-size: 45px;">Ask Question Form</h1><hr> -->
+            <div class="form-group card-body">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="give title for question" formControlName="questionTitle"required>
+               <span class="error" *ngIf="questionTitle.hasError('required')&& questionTitle.touched">question title is required</span>
+            </div>
+            <div class="form-group">
+                <label>Body</label><br>
+                <!-- <angular-editor formControlName="questionBody" [config]="editorConfig" class="editor"></angular-editor> -->
+              <quill-editor [styles]="{height: '200px'}"[modules]="config"formControlName="questionBody" ></quill-editor>
+                <!--      <textarea cols="80" rows="15" class="form-control" name="questionBody"formControlName="questionBody" required ></textarea>
+            -->    
+            <span class="error" *ngIf="questionBody.hasError('required')&& questionBody.touched">question body is required</span>
+           
+        </div>
+            <!--<div class="form-group" formArrayName="questionTag" required>
+                <textarea cols="80" rows="20" class="form-control" name="questionBody"formControlName="questionBody" required ></textarea>
+                <span class="error" *ngIf="questionBody.hasError('required')&& questionBody.touched">question body is required</span>
+            </div>
+            <div class="form-group" formArrayName="questionTag" required>
+                <label>Tag</label>
+                <ng-container *ngFor="let tag of questionObj.get('questionTag').controls;index as i">
+                    <input style="margin-top: 10px;"type="text" class="form-control" placeholder="specify tag" autocomplete="off" formControlName="{{i}}" required>
+                <span class="error" *ngIf="questionTag.hasError('required')&& questionTag.touched">question tag is required</span>
+                </ng-container>
+                <button class="btn btn-secondary btn-lg" style="margin-top: 8px;color: white; padding: 12px 16px;
+                font-size: 23px;
+                font-weight: 300;
+                margin-left:10px;
+               
+font-family: 'Merienda', cursive;"(click)="addTags()" type="button"> add tags</button>
+               </div>-->
+               <div class="form-group">
+                   <label>Tags</label>
+                <mat-form-field class="example-chip-list" >
+                    <mat-label>add Tags</mat-label>
+                    <mat-chip-list #chipList aria-label="select tag">
+                      <mat-chip color="custom"
+                        *ngFor="let tag of questionTagArray"
+                        [selectable]="selectable"
+                        [removable]="removable"
+                        (removed)="remove(tag)">
+                        {{tag}}
+                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                      </mat-chip>
+                      <input style="border:rgb(34, 32, 32) 1px solid;padding: 10px;"
+                        placeholder="New tag..."
+                        #tagInput
+                        [formControl]="tagCtrl"
+                        [matChipInputFor]="chipList"
+                        [matAutocomplete]="auto"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        (matChipInputTokenEnd)="add($event)" >
+                        
+                    </mat-chip-list>
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="selected($event)" >
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                          {{option}}
+                        </mat-option>
+                      </mat-autocomplete>
+                  </mat-form-field>
+                 
+               </div>
+            <button class="btn btn-primary btn-lg" type="submit" [disabled]="!questionObj.valid" id="btn">Submit question</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-3 " style="padding-top: 47px;">
+      <div class="card">
+        <div class="card-header">draft your question</div>
+        <div class="card-body">
+          <p class="card-title">The community is here to help you with specific coding, algorithm, or language problems.
+
+            Avoid asking opinion-based questions.</p>
+            <p data-toggle="collapse" data-target="#collapseExample" class="card-text">
+              1.summarize the problem<a><i class="fas fa-angle-down" style="float: right;"></i></a>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+               <ul>
+               <li> Include details about your goal</li>
+
+               <li> Describe expected and actual results</li>
+                
+               <li>Include any error messages</li> 
+               </ul>
+              
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+      </div>
+ 
+>>>>>>> origin/feature-question
 </div>
 </div>-->
 </div>
