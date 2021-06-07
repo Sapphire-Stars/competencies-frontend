@@ -37,11 +37,11 @@
 <div class="gradient">
   <div class="container">
     
-<<<<<<< HEAD
 
-=======
+
+
     <button id="my-button-5" class="btn btn-primary pull-right mt-2 " (click)="signOut()" routerLinkActive=true >Signout</button>
->>>>>>> origin/feature-question
+
     <h1 style="margin-left: 0rem mr-8">Top Questions</h1>
     <button id="my-button-5" class="btn btn-primary pull-right" routerLink="/askQuestion" routerLinkActive=true >Ask Question</button>
      
@@ -55,15 +55,15 @@
             itemsPerPage: 5,
             currentPage: page,
             totalItems: totalRec }">
-<<<<<<< HEAD
+
               <div class="box2 row">
                 <div class="col-md-1 col-12">
                 <span class="text-dark mr-1" style="font-size: large;">Views</span><br>
-=======
+
               <div class="box2">
                 <div class=views>
                 <span class="text-dark mr-2">Views</span><br>
->>>>>>> origin/feature-question
+
                 
 
                 <i class="bi bi-eye"></i>
@@ -87,16 +87,15 @@
                   <p class="text-dark" style="font-size: large;">Title:{{ i.questionTitle }}</p>
                  <small class="pl-1 pt-1" style="font-size: large;"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn text-light ml-2 mr-2 mt-1">{{ tag }}</button></span></small>
                 </div>
-                
-<<<<<<< HEAD
+
 
                 <div class="col-md-2 col-6">
                   <span class="text-dark" style="font-size: medium;">{{i.createdAt}}</span>
-=======
+
                 <div class="tags">
                   <p class="text-dark">Title:{{ i.questionTitle }}</p>
                  <small class="pl-1 pt-1"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn btn-primary btn-sm  btn-outline-success ml-1 mr-4 text-dark">{{ tag }}</button></span></small>
->>>>>>> origin/feature-question
+
                 </div>
                
                 <br />
