@@ -1,10 +1,36 @@
-.form{
+#form{
     width: 100%;
     height: 100%;
-    margin: auto;
+    margin:auto;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
-.input{
+#customFile{
     text-align: center;
     margin: auto;
+}
+.container-1{
+    margin-top: 10rem;
+    width: 100%;
+    height: 100%;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    text-align: center;
+    float:right;
+    align-items: center;
+    margin-right: 35rem; 
+ } 
+
+.container-1 {
+    width:100%;
+    height:auto;
+    position: fixed;
+    background-color:#6190E8;
+    top: 30%;
+    left: 40%;
+
+    margin-top: -100px;
+    margin-left: -100px;
 }
