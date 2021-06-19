@@ -1,13 +1,11 @@
 
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light" id="mynavbar">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <!-- <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
   <span style="font-size: large;">Questions</span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <!-- <span class="example-spacer"></span> -->
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -21,6 +19,8 @@
           <a class="dropdown-item" (click)="signOut()" routerLinkActive=true>Signout</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink="/user-profile" routerLinkActive=true>Profile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/dashboard" routerLinkActive=true>Leader Board</a>
         </div>
       </li>
   
@@ -38,10 +38,6 @@
   <div class="container">
     
 
-
-
-    <button id="my-button-5" class="btn btn-primary pull-right mt-2 " (click)="signOut()" routerLinkActive=true >Signout</button>
-
     <h1 style="margin-left: 0rem mr-8">Top Questions</h1>
     <button id="my-button-5" class="btn btn-primary pull-right" routerLink="/askQuestion" routerLinkActive=true >Ask Question</button>
      
@@ -55,15 +51,9 @@
             itemsPerPage: 5,
             currentPage: page,
             totalItems: totalRec }">
-
               <div class="box2 row">
                 <div class="col-md-1 col-12">
                 <span class="text-dark mr-1" style="font-size: large;">Views</span><br>
-
-              <div class="box2">
-                <div class=views>
-                <span class="text-dark mr-2">Views</span><br>
-
                 
 
                 <i class="bi bi-eye"></i>
@@ -85,18 +75,17 @@
                  
                 <div class="col-md-6 col-12">
                   <p class="text-dark" style="font-size: large;">Title:{{ i.questionTitle }}</p>
-                 <small class="pl-1 pt-1" style="font-size: large;"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn text-light ml-2 mr-2 mt-1">{{ tag }}</button></span></small>
+                 <small class="pl-1 pt-1" style="font-size: large;"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn text-light ml-2 mr-2 ">{{ tag }}</button></span></small>
                 </div>
-
+                
 
                 <div class="col-md-2 col-6">
-                  <span class="text-dark" style="font-size: medium;">{{i.createdAt}}</span>
-
-                <div class="tags">
-                  <p class="text-dark">Title:{{ i.questionTitle }}</p>
-                 <small class="pl-1 pt-1"> Tags:  <span *ngFor="let tag of i.tags"><button id="my-button-1"  class="btn btn-primary btn-sm  btn-outline-success ml-1 mr-4 text-dark">{{ tag }}</button></span></small>
-
+                  <span class="text-dark" style="font-size: large;">{{i.createdAt}}</span>
                 </div>
+               
+
+
+                
                
                 <br />
               </div>
@@ -113,3 +102,4 @@
 		<pagination-controls  id="listing_pagination" maxSize:any="5" directionLinks:any="true" (pageChange)="page = $event"></pagination-controls>
   </div>
 </div>
+
