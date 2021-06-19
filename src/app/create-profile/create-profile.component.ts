@@ -39,6 +39,14 @@ export class CreateProfileComponent implements OnInit {
       image: new FormControl(null),
     });
 
+    this.showImage().subscribe(data=>{
+      console.log(data)
+      this.data=data
+      console.log(this.data)
+      this.profile=this.data[this.data.length-1].imagePath
+      console.log(this.profile)
+    })
+
   }
 
   onFileSelect(event: any) {
@@ -49,7 +57,7 @@ export class CreateProfileComponent implements OnInit {
   
 
   onSubmit() {
-   
+  //  window.alert("You have Success")
     const fd=new FormData()
     fd.append('email',this.form.value.email)
     fd.append('image',this.selectedFile,this.selectedFile.name)
@@ -66,29 +74,15 @@ export class CreateProfileComponent implements OnInit {
     })
     
   }
-  getMyImage(){
-    this.showImage().subscribe(data=>{
-      console.log(data)
-      this.data=data
-      console.log(this.data)
-      this.profile=this.data[this.data.length-1].imagePath
-      console.log(this.profile)
-
-
-     // console.log(this.profile)
-      
-      
-      
-      // if(data!=null){
-      // console.log(data)
-      // this.profiles=data.profiles
-      // this.thispic=this.profiles[this.profiles.length-1]
-      // this.img=this.thispic.img
-      // }
- 
-
-    })
-  }
+  // getMyImage(){
+  //     this.showImage().subscribe(data=>{
+  //     console.log(data)
+  //     this.data=data
+  //     console.log(this.data)
+  //     this.profile=this.data[this.data.length-1].imagePath
+  //     console.log(this.profile)
+  //   })
+  // }
 
 
   onUpload(data:any){
