@@ -26,7 +26,6 @@ export class RegistrationPageComponent implements OnInit {
         .subscribe(
           data =>{
             this.validator=false;
-           // window.alert("verification link has been sent to your mail, please verify!")
            Swal.fire({
             icon: 'success',
             title: 'verification link has been sent to your mail, please verify!',

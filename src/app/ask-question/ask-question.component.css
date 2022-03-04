@@ -13,18 +13,11 @@
 }
 .formClass
 {
-<<<<<<< HEAD
-   border:1px solid black;
-   padding:10%;
-   background-color: #e6d27867;
-   border-radius: 20px;
-=======
    /* border:1px solid black; */
   padding: 20px;
   margin-bottom: 16px;
    /* background-color: #808080; */
    /* border-radius: 20px; */
->>>>>>> origin/feature-question
 /*   background:linear-gradient(to left,#808080,#3fada8);*/
 /* 
 background:linear-gradient(to right,#e6d27867,#e6d27867); */
@@ -74,14 +67,6 @@ label{
 .editor{
     padding:6px;
 }
-<<<<<<< HEAD
-
-/*.row{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}*/
-=======
 /* .formClass  .mat-focused .mat-form-field-ripple {
  
     background-color:blue !important;
@@ -103,4 +88,3 @@ label{
   .mat-form-field-underline {
     border-bottom: green;
 }
->>>>>>> origin/feature-question
